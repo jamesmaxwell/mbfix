@@ -1,0 +1,4 @@
+/*
+Copyright(c) 2011 Company Name
+*/
+Ext.Loader.setConfig({enabled:true});Ext.application({name:"Mbfix",appFolder:"app",autoCreateViewport:true,controllers:["Record","TypeAdmin"],models:["User","Notice","CommonType","ServicePoint"],stores:["Users","Notices","CustomTypes","ServiceTypes","MachineBrands","MachineTypes","WarrantyTypes","ServicePoints"]});Ext.define("Mbfix.model.CommonType",{extend:"Ext.data.Model",fields:["id","text"]});Ext.define("Mbfix.model.Notice",{extend:"Ext.data.Model",fields:["id","title","author","publish_date"]});Ext.define("Mbfix.model.ServicePoint",{extend:"Ext.data.Model",fields:["id","name","short_name","desc"]});Ext.define("Mbfix.model.User",{extend:"Ext.data.Model",fields:["id","name","realname","password","role_id","lastlogin"],proxy:{type:"ajax",url:"index.php?r=user/currentUser",reader:{type:"json",root:"results"}}});Ext.define("Mbfix.store.Users",{extend:"Ext.data.Store",model:"Mbfix.model.User"});

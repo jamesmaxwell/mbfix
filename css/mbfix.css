@@ -1,0 +1,14 @@
+.mbfix_logo{background:#f2f2f2;}
+.mbfix_logo img{float:left;}
+.mbfix_logo div{float:left;font-size:16px;font-weight:bold;padding:8px;}
+.mbfix_footer{text-align:center;border-top:1px solid #ddd;}
+.ico_record{background-image:url('../images/mbfix_record.png');}
+.ico_repair{background-image:url('../images/mbfix_repair.png');}
+.ico_search{background-image:url('../images/mbfix_search.png');}
+.ico_finance{background-image:url('../images/mbfix_finance.png');}
+.ico_exit{background-image:url('../images/mbfix_exit.png');}
+.type_add{background-image:url('../images/icons/add.gif');}
+.type_delete{background-image:url('../images/icons/delete.gif');}
+div.recordDetail{padding:3px;font-size:13px;}
+div.recordDetail div{margin:2px 0;}
+div.recordDetail span{font-weight:bold;padding-left:3px;)

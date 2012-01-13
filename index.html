@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <html> 
+    <head> 
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <![endif]--> 
+      <title>Login to mbfix.com</title>
+      <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon" />        
+	  <link type="text/css" rel="stylesheet" href="css/login.css?v=1" />
+	  <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+    </head>
+    <body class="hsdmz">
+      <div class="page">        
+        <div class="app">           
+          <div class="yolk">
+<div class="logo"></div>
+<div id="wrapper">
+  <div id="innerWrapper" class="login">
+    <h1 id="ribbon">用户登录</h1>
+    <div class="form_shell">
+      <form id="loginForm" action="index.php?r=user/login" method="post">
+        <div id="formElements" class="field_shell">
+          <p class="form_row">
+            <label class="label" for="username">用户:</label>
+			<input type="text" name="username" id="username" class="input_field" value=""/>
+          </p>
+          <p class="form_row">
+            <label class="label" for="password">密码:</label>
+            <input type="password" name="password" id="password" class="input_field"/>           
+          </p>
+		  <p class="form_row">
+			<label class="label" for="servicepoint">网点:</label>
+			<select name="servicepoint" id="servicepoint" class="select_field"></select>
+		  </p>
+          <div class="submit_shell">
+              <br />
+				<a id="loginBtn" class="btn ui-button do">
+					<span class="corner left"></span>
+					<span class="nested">登录</span>
+					<span class="arrow next"></span>
+					<span class="nested ie7_spacer"></span>
+					<span class="corner right"></span>
+				</a>           
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--[if IE]>
+<div class="wrapper_reflect">
+</div>
+<![endif]-->
+          </div>
+          
+          <div style="clear:both; height:0px; width:0px; visibility:none;">&nbsp;</div>
+        </div>
+      </div>
+    <script type="text/javascript">
+	var lastUserName;
+	$(function(){
+		$('#username').change(function(evt){
+			var username = $.trim($('#username').val());
+			if(username.length == 0){
+				alert('请先输入用户名!');
+				return;
+			}
+			if(lastUserName == username && $('#servicepoint').find('option').length > 0) return;
+
+			lastUserName = username;
+			$.post('index.php?r=servicePoint/list',{username:username},function(data, textStatus, jqXHR){
+				if(data.success){
+					$('#servicepoint').empty();
+					for(var idx in data.results){
+						$('#servicepoint').append('<option value="' + data.results[idx].id + '">' + data.results[idx].name + '</option>');
+					}
+				}
+			},'json')
+			.error(function(data){
+				alert(data);
+			});
+		});
+		
+		$('#loginBtn').click(function(evt){
+			//client check valid
+			var errorMsg = [],
+			username = $.trim($('#username').val()),
+			password = $.trim($('#password').val()),
+			servicePoint = $.trim($('#servicepoint').val());
+			if(username.length == 0){
+				errorMsg.push('用户名不能为空!');
+			}
+			if(password.length == 0){
+				errorMsg.push('密码不能为空!');
+			}
+			if(servicePoint.length == 0){
+				errorMsg.push('网点不能为空!');
+			}
+			if(errorMsg.length == 0){
+				$.post('index.php?r=user/login',{username:username,password:password,servicePoint:servicePoint},function(data, textStatus, jqXHR){
+					if(data.success){
+						location.href = 'main.html';
+					}else{
+						alert(data.errors);
+					}
+				},'json')
+				.error(function(data, textStatus, jqXHR){
+					alert(data);
+				});
+			}else{
+				alert(errorMsg.join('<br/>'));
+			}
+		});
+	});
+	</script>
+    </body>
+  </html>
+

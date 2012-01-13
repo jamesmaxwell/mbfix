@@ -1,0 +1,270 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
+{
+	background: transparent;
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+ol,ul
+{
+	list-style-position: none;
+	list-style-type: none;
+}
+blockquote,q
+{
+	quotes: none;
+}
+body
+{
+	line-height: 1;
+	background: url('../images/gradient.jpg') no-repeat;
+	background-position: center 175px;
+	font-family: Arial,Helvetica,sans-serif;
+}
+.hsdmz .page>.app
+{
+	display: block;
+	margin: 0;
+	min-width: 960px;
+	padding: 20px 20px 40px 20px;
+}
+.logo
+{
+	background-image: url('../images/logo.gif');
+	background-position: left top;
+	background-repeat: no-repeat;
+	height: 60px;
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	width: 200px;
+}
+#wrapper
+{
+	background-color: #fff;
+	border: 1px solid #ddd;
+	margin: 85px auto 0 auto;
+	overflow: visible;
+	padding: 20px;
+	position: relative;
+	width: 560px;
+}
+.wrapper_reflect
+{
+	background-image: url('../images/bg_reflect.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	height: 165px;
+	margin: 0 auto 0 auto;
+	width: 600px;
+}
+#innerWrapper .body_message
+{
+	color: #999;
+	font-family: helvetica,arial,sans-serif;
+	font-size: 26px;
+	margin: 50px 0 20px 0;
+	text-align: center;
+}
+#innerWrapper .layers
+{
+	font-size: 12px;
+	padding: 6px;
+	z-index: 0;
+}
+form .input_field
+{
+	border: 1px solid #ccc;
+	color: #000;
+	font-size: 16px;
+	height: 18px;
+	margin: 0 5px;
+	moz-border-radius: 5px;
+	padding: 7px;
+	webkit-border-radius: 5px;
+	width: 300px;
+}
+form .select_field
+{
+	border: 1px solid #ccc;
+	color: #000;
+	font-size: 16px;
+	margin: 0 5px;
+	moz-border-radius: 5px;
+	padding: 5px;
+	webkit-border-radius: 5px;
+	width: 315px;
+}
+form input::-webkit-input-placeholder
+{
+	color: #aaa;
+	font-size: 12px;
+}
+form input:-moz-placeholder
+{
+	color: #aaa;
+	font-size: 12px;
+}
+form p
+{
+	padding: 5px;
+}
+#innerWrapper
+{
+	background-color: #f1f1f1;
+	margin: 0;
+	padding: 30px 30px 30px 30px;
+}
+#innerWrapper.login
+{
+	min-height: 320px;
+}
+.login .error_shell
+{
+	height: 40px;
+	margin: 20px 0 0 0;
+	width: 100%;
+}
+.form_shell
+{
+	position: relative;
+	width: 100%;
+}
+.form_shell .field_shell
+{
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+.form_shell .submit_shell
+{
+	margin: 0 0 10px 95px;
+	width: 315px;
+}
+.form_shell .submit_shell label.remember
+{
+	color: #666!important;
+	font-size: 12px!important;
+}
+.form_shell .submit_shell label.remember:hover
+{
+	color: #333!important;
+}
+h1#ribbon
+{
+	/*background: transparent url('../images/login_ribbon.png') no-repeat 0 0;*/
+	height: 80px;
+	margin: -10px 0 0 -74px;
+	width: 270px;
+}
+.submit_shell .check
+{
+	margin: 0;
+}
+.form_row
+{
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+.form_row a
+{
+	color: #09f;
+	font-size: 12px;
+	text-decoration: none;
+}
+.form_row a:hover
+{
+	text-decoration: underline;
+}
+.error_wrapper
+{
+	height: 30px;
+	position: relative;
+	width: 100%;
+}
+.error_wrapper ul li
+{
+	padding: 3px 0;
+}
+.error_wrapper .shell
+{
+	bottom: 0;
+	padding: 10px 0;
+	position: absolute;
+	width: 100%;
+}
+.form_shell .help
+{
+	border-top: 1px dotted #b5b5b5;
+	margin: 50px 0 10px 0;
+	padding: 25px 0 0 0;
+}
+.login .button
+{
+	margin: 20px 0 0 0;
+}
+.login .form_shell
+{
+	padding: 0 0 15px 0;
+}
+.hsdmz a.ui-button {
+	-webkit-transition: opacity 200ms ease-in-out;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	max-height: 30px;
+	min-height: 30px;
+	overflow: hidden;
+	padding: 0!important;
+	position: static;
+	text-decoration: none;
+	vertical-align: middle;
+}
+.hsdmz a.ui-button:hover {
+	opacity: 0.9;
+}
+.hsdmz a.ui-button.submit, .hsdmz a.ui-button.do, .hsdmz a.ui-button.submit > span.nested, .hsdmz a.ui-button.do > span.nested {
+	background: url('../images/uibutton.png') 0 -210px repeat-x;
+	color: white;
+	text-shadow: -1px -1px 0 #2E74DE;
+}
+.hsdmz a.ui-button.submit > span.arrow.next, .hsdmz a.ui-button.do > span.arrow.next {
+	background: url('../images/uibutton.png') 0 -240px no-repeat;
+}
+.hsdmz a.ui-button.submit > span.corner.left, .hsdmz a.ui-button.do > span.corner.left {
+	background: url('../images/uibutton.png') 0 -180px no-repeat;
+}
+.hsdmz a.ui-button.submit > span.corner.right, .hsdmz a.ui-button.do > span.corner.right {
+	background: url('../images/uibutton.png') -14px -180px no-repeat;
+}
+.hsdmz a.ui-button > span.nested {
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 30px;
+	padding: 0 8px;
+	position: relative;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+}
+.hsdmz a.ui-button > span.arrow {
+	display: block;
+	float: left;
+	height: 30px;
+	width: 18px;
+}
+.hsdmz a.ui-button > span.nested.ie7_spacer {
+	padding: 0;
+	width: 6px;
+}
+.hsdmz a.ui-button > span.corner {
+	display: block;
+	float: left;
+	height: 30px;
+	position: relative;
+	width: 4px;
+}

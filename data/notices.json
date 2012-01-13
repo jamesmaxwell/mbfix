@@ -1,0 +1,14 @@
+﻿{
+	success : true,
+	notices : [{
+				'id' : 1,
+				'title' : '正修维修管理系统公告',
+				'author' : '管理员',
+				'publish_date' : '2011-11-28'
+			}, {
+				'id' : 2,
+				'title' : '乐维网公告',
+				'author' : '小马',
+				'publish_date' : '2011-11-27'
+			}]
+}

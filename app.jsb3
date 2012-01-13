@@ -1,0 +1,632 @@
+{
+    "projectName": "Project Name",
+    "licenseText": "Copyright(c) 2011 Company Name",
+    "builds": [
+        {
+            "name": "All Classes",
+            "target": "all-classes.js",
+            "options": {
+                "debug": true
+            },
+			"compress": true,
+            "files": [
+                {
+                    "path": "../ext/src/data/",
+                    "name": "IdGenerator.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Observable.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Operation.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "validations.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Association.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "SortTypes.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "HashMap.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Filter.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Connection.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Sorter.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "KeyMap.js"
+                },
+                {
+                    "path": "../ext/src/data/writer/",
+                    "name": "Writer.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Memento.js"
+                },
+                {
+                    "path": "../ext/src/panel/",
+                    "name": "Proxy.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "Template.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "CubicBezier.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "ResultSet.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "Queue.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "StatusProxy.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ZIndexManager.js"
+                },
+                {
+                    "path": "../ext/src/fx/target/",
+                    "name": "Target.js"
+                },
+                {
+                    "path": "../ext/src/layout/",
+                    "name": "Layout.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "Color.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Floating.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ComponentQuery.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "KeyNav.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Offset.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/boxOverflow/",
+                    "name": "None.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "AbstractContainer.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Animate.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "ClickRepeater.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "TextMetrics.js"
+                },
+                {
+                    "path": "../ext/src/state/",
+                    "name": "Provider.js"
+                },
+                {
+                    "path": "../ext/src/app/",
+                    "name": "Controller.js"
+                },
+                {
+                    "path": "../ext/src/app/",
+                    "name": "EventBus.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "AbstractManager.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ModelManager.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ComponentManager.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Types.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Field.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "AbstractMixedCollection.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Sortable.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "MixedCollection.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "StoreManager.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Errors.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "Ajax.js"
+                },
+                {
+                    "path": "../ext/src/data/writer/",
+                    "name": "Json.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "XTemplate.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "Easing.js"
+                },
+                {
+                    "path": "../ext/src/data/reader/",
+                    "name": "Reader.js"
+                },
+                {
+                    "path": "../ext/src/data/reader/",
+                    "name": "Json.js"
+                },
+                {
+                    "path": "../ext/src/data/proxy/",
+                    "name": "Proxy.js"
+                },
+                {
+                    "path": "../ext/src/data/proxy/",
+                    "name": "Server.js"
+                },
+                {
+                    "path": "../ext/src/data/proxy/",
+                    "name": "Ajax.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Model.js"
+                },
+                {
+                    "path": "../ext/src/fx/target/",
+                    "name": "Sprite.js"
+                },
+                {
+                    "path": "../ext/src/fx/target/",
+                    "name": "CompositeSprite.js"
+                },
+                {
+                    "path": "../ext/src/fx/target/",
+                    "name": "Element.js"
+                },
+                {
+                    "path": "../ext/src/fx/target/",
+                    "name": "CompositeElement.js"
+                },
+                {
+                    "path": "../ext/src/fx/target/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "Animator.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "PropertyHandler.js"
+                },
+                {
+                    "path": "../ext/src/fx/",
+                    "name": "Anim.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "AbstractDock.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "Dock.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "Tip.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "FocusManager.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Region.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "DragDropManager.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "Auto.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "DragDrop.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "DD.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "DDProxy.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "DragSource.js"
+                },
+                {
+                    "path": "../ext/src/panel/",
+                    "name": "DD.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/boxOverflow/",
+                    "name": "Scroller.js"
+                },
+                {
+                    "path": "../ext/src/state/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "../ext/src/state/",
+                    "name": "Stateful.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "AbstractComponent.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "../ext/src/container/",
+                    "name": "AbstractContainer.js"
+                },
+                {
+                    "path": "../ext/src/container/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "../ext/src/panel/",
+                    "name": "Header.js"
+                },
+                {
+                    "path": "../ext/src/toolbar/",
+                    "name": "Fill.js"
+                },
+                {
+                    "path": "../ext/src/toolbar/",
+                    "name": "Item.js"
+                },
+                {
+                    "path": "../ext/src/toolbar/",
+                    "name": "Separator.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "../ext/src/menu/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "../ext/src/button/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/boxOverflow/",
+                    "name": "Menu.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "Box.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "HBox.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "VBox.js"
+                },
+                {
+                    "path": "../ext/src/toolbar/",
+                    "name": "Toolbar.js"
+                },
+                {
+                    "path": "../ext/src/panel/",
+                    "name": "AbstractPanel.js"
+                },
+                {
+                    "path": "../ext/src/panel/",
+                    "name": "Panel.js"
+                },
+                {
+                    "path": "../ext/src/tip/",
+                    "name": "Tip.js"
+                },
+                {
+                    "path": "../ext/src/tip/",
+                    "name": "ToolTip.js"
+                },
+                {
+                    "path": "../ext/src/tip/",
+                    "name": "QuickTip.js"
+                },
+                {
+                    "path": "../ext/src/tip/",
+                    "name": "QuickTipManager.js"
+                },
+                {
+                    "path": "../ext/src/app/",
+                    "name": "Application.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Point.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Batch.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "Layer.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Request.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "PluginManager.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "LoadMask.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "Auto.js"
+                },
+                {
+                    "path": "../ext/src/resizer/",
+                    "name": "Resizer.js"
+                },
+                {
+                    "path": "../ext/src/panel/",
+                    "name": "Tool.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "CSS.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ElementLoader.js"
+                },
+                {
+                    "path": "../ext/src/dd/",
+                    "name": "DragTracker.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "AbstractStore.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "Grouper.js"
+                },
+                {
+                    "path": "../ext/src/menu/",
+                    "name": "Item.js"
+                },
+                {
+                    "path": "../ext/src/layout/component/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "../ext/src/menu/",
+                    "name": "Separator.js"
+                },
+                {
+                    "path": "../ext/src/menu/",
+                    "name": "KeyNav.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "AbstractFit.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "CompositeSprite.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ComponentLoader.js"
+                },
+                {
+                    "path": "../ext/src/util/",
+                    "name": "ComponentDragger.js"
+                },
+                {
+                    "path": "../ext/src/window/",
+                    "name": "Window.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "Store.js"
+                },
+                {
+                    "path": "../ext/src/data/",
+                    "name": "ArrayStore.js"
+                },
+                {
+                    "path": "../ext/src/menu/",
+                    "name": "CheckItem.js"
+                },
+                {
+                    "path": "../ext/src/layout/container/",
+                    "name": "Fit.js"
+                },
+                {
+                    "path": "../ext/src/menu/",
+                    "name": "Menu.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "Surface.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "../ext/src/data/reader/",
+                    "name": "Array.js"
+                },
+                {
+                    "path": "../ext/src/resizer/",
+                    "name": "ResizeTracker.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "ShadowPool.js"
+                },
+                {
+                    "path": "../ext/src/data/proxy/",
+                    "name": "Client.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "Matrix.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "SpriteDD.js"
+                },
+                {
+                    "path": "../ext/src/",
+                    "name": "Shadow.js"
+                },
+                {
+                    "path": "../ext/src/data/proxy/",
+                    "name": "Memory.js"
+                },
+                {
+                    "path": "../ext/src/draw/",
+                    "name": "Sprite.js"
+                },
+                {
+                    "path": "../ext/src/draw/engine/",
+                    "name": "Vml.js"
+                },
+                {
+                    "path": "../ext/src/draw/engine/",
+                    "name": "Svg.js"
+                }
+            ]
+        },
+        {
+            "name": "Application - Production",
+            "target": "app-all.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "",
+                    "name": "app.js"
+                },
+				{
+					"path":"app/model/",
+					"name":"CommonType.js"
+				},
+				{
+					"path":"app/model/",
+					"name":"Notice.js"
+				},
+				{
+					"path":"app/model/",
+					"name":"ServicePoint.js"
+				},				
+				{
+                    "path": "app/model/",
+                    "name": "User.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Users.js"
+                }
+            ]
+        }
+    ],
+    "resources": []
+}
