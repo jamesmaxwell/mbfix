@@ -126,17 +126,24 @@ Ext.define('Mbfix.controller.Home', {
 					// 如果成功,则把当前登录服务点保存下来.
 					controller.application.currentUser = result.results[0].name;
 					controller.application.currentServicePoint = result.results[0].servicePoint;
-					var menus = result.menus, i, j, menuItem, 
-						toolbar = Ext.getCmp('menuToolbar');
+					var menus = result.menus, i, j, menuItem, key, item, toolbar = Ext
+							.getCmp('menuToolbar');
 					// 添加维修菜单
-					for(i=0; i<menus.length; i++){
-						menuItem = { xtype : 'button', text : menus[i].text, menu : []};
-						for(j=0; j<menus[i].items.length; j++){
-							menuItem.menu.push({
-								xtype : menus[i].items[j].xtype || 'menuitem',
-								text : menus[i].items[j].text,
-								itemId : menus[i].items[j].itemId
-							});							
+					for (i = 0; i < menus.length; i++) {
+						menuItem = {
+							xtype : 'button',
+							text : menus[i].text,
+							menu : []
+						};
+						for (j = 0; j < menus[i].items.length; j++) {
+							item = {};
+							for (key in menus[i].items[j]) {
+								item[key] = menus[i].items[j][key];
+							}
+							if (!item['xtype'])
+								item['xtype'] = 'menuitem';
+
+							menuItem.menu.push(item);
 						}
 						toolbar.add(menuItem);
 					}
@@ -146,9 +153,9 @@ Ext.define('Mbfix.controller.Home', {
 				}
 			},
 			failure : function(response) {
-				if(response.status == 500){
-					Ext.Msg.alert('错误',response.responseText);
-				}else{
+				if (response.status == 500) {
+					Ext.Msg.alert('错误', response.responseText);
+				} else {
 					Ext.widget('login').show();
 				}
 			}
@@ -166,7 +173,7 @@ Ext.define('Mbfix.controller.Home', {
 					success : function(form, action) {
 						formPanel.up('login').close();
 						// 加载公告
-						//controller.getNoticesStore().load();
+						// controller.getNoticesStore().load();
 						window.location.reload(true);
 					},
 					failure : function(form, action) {
