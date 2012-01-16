@@ -6,9 +6,10 @@ Ext.define('Mbfix.controller.Finance', {
 
 	views : ['Home', 'finance.FundApply', 'finance.FundApplyList',
 			'finance.FundVerify', 'finance.Payout', 'finance.PayoutList',
-			'finance.TurnoverIncome'],
+			'finance.TurnoverIncome','finance.TurnoverIncomeList'],
 	stores : ['finance.FundRecords', 'finance.FundApplyStates',
-			'finance.FundPayTypes', 'finance.TicketTypes','finance.Payouts'],
+			'finance.FundPayTypes', 'finance.TicketTypes','finance.Payouts',
+			'finance.TurnoverIncomes'],
 
 	init : function() {
 		this.control({
@@ -26,6 +27,9 @@ Ext.define('Mbfix.controller.Finance', {
 					},
 					'home #menuTurnover':{
 						click : this.showTurnover
+					},
+					'home #menuAccountVerify' : {
+						click : this.turnoverIncomeList
 					},
 					'fundapply button[action="confirm_apply"]' : {
 						click : this.confirmFundApply
@@ -224,6 +228,20 @@ Ext.define('Mbfix.controller.Finance', {
 					},
 					failure : function(form, action) {
 						Ext.Msg.alert('失败', action.result.errors.message);
+					}
+				});
+	},
+	
+	/**
+	* 营业款收入列表(财务核销)窗口
+	*/
+	turnoverIncomeList : function(button){
+		var win = Ext.widget('turnoverincomelist');
+		win.show();
+		win.down('grid').getStore().loadPage(1, {
+					scope : this,
+					callback : function(records, response, opts) {
+						;
 					}
 				});
 	}

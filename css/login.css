@@ -120,7 +120,7 @@ form p
 }
 #innerWrapper.login
 {
-	min-height: 320px;
+	min-height: 300px;
 }
 .login .error_shell
 {
@@ -155,8 +155,8 @@ form p
 h1#ribbon
 {
 	/*background: transparent url('../images/login_ribbon.png') no-repeat 0 0;*/
-	height: 80px;
-	margin: -10px 0 0 -74px;
+	height: 60px;
+	margin: 0 150px;
 	width: 270px;
 }
 .submit_shell .check

@@ -271,6 +271,7 @@ class ComponentApplyController extends Controller
 				$incomeModel->user_id = $userId;
 				$incomeModel->service_point_id = $servicePoint;
 				$incomeModel->pay_type = $model->pay_type;
+				$incomeModel->pay_state = $model->receipt_type;
 				//收入金额＝数量*单价－优惠
 				$incomeModel->money = $model->amount * $model->price - $model->discount;
 				$incomeModel->notes = '备件出库自动生成，出库编号为 ' . $model->id;

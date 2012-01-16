@@ -132,10 +132,12 @@ class ServiceRecordController extends Controller
 			ServiceRecord::model()->updateByPk($model->record_id, array('record_state'=>ServiceRecord::FINISHED));
 			
 			$recordModel = ServiceRecord::model()->find('id=:id',array(':id'=>$model->record_id));
+			//维修结案，增加营业性收入
 			$incomeModel = new TurnoverIncome();
 			$incomeModel->user_id = Yii::app()->user->userId;
 			$incomeModel->service_point_id = Yii::app()->user->servicePoint;
 			$incomeModel->pay_type = $model->pay_type_id;
+			$incomeModel->pay_state = $model->pay_state;
 			$incomeModel->money = $model->pay_money;
 			$incomeModel->notes = '服务单结案自动生成。 工单号' . $recordModel->record_no;
 			$incomeModel->save();

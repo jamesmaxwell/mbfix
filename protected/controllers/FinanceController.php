@@ -91,12 +91,13 @@ class FinanceController extends Controller
 		if($records != null){
 			echo JsonHelper::encode(true,'',$records,
 			array('id','apply_amount','apply_reason','apply_notes','apply_date',
-			'verify_amount','pay_type','pay_account','receiver_account','receiver',
-			'verify_date','state',
-			array('name'=>'apply_user','col'=>'applyUser.name'),
-			array('name'=>'apply_service_point','col'=>'applyServicePoint.name'),
-			array('name'=>'verify_user','col'=>'verifyUser.name'),
-			array('name'=>'verify_service_point','col'=>'verifyServicePoint.name')));
+				'verify_amount','pay_type','pay_account','receiver_account','receiver',
+				'verify_date','state',
+				array('name'=>'apply_user','col'=>'applyUser.name'),
+				array('name'=>'apply_service_point','col'=>'applyServicePoint.name'),
+				array('name'=>'verify_user','col'=>'verifyUser.name'),
+				array('name'=>'verify_service_point','col'=>'verifyServicePoint.name')),
+			array('total'=>$total));
 		}
 	}
 
@@ -174,7 +175,8 @@ class FinanceController extends Controller
 			echo JsonHelper::encode(true,'',$records,
 			array('id','consume_content','amount','ticket_no','notes','ticket_type','date',
 				array('name'=>'handler_user','col'=>'handlerUser.name'),
-				array('name'=>'service_point','col'=>'servicePoint.name')));
+				array('name'=>'service_point','col'=>'servicePoint.name')),
+			array('total'=>$total));
 		}
 	}
 	
@@ -192,6 +194,33 @@ class FinanceController extends Controller
 			echo JsonHelper::encode(true);
 		}else{
 			echo JsonHelper::encode(false,JsonHelper::encodeError($model->getErrors()));
+		}
+	}
+	
+	/**
+	* 营业款收入列表，用于财务核销
+	*/
+	public function actionTurnoverIncomeList(){
+		$limit = $_GET['limit'];
+		$offset = $_GET['start'];
+		$criteria = new CDbCriteria();
+		$criteria->order = 't.date desc';
+		$total = TurnoverIncome::model()->count($criteria);
+		$criteria->with = array(
+			'payType'=>array('select'=>'text'),
+			'user'=>array('select'=>'name'),
+			'servicePoint'=>array('select'=>'name'));
+		$criteria->limit = $limit;
+		$criteria->offset = $offset;
+		$records = TurnoverIncome::model()->findAll($criteria);
+		if($records != null){
+			echo JsonHelper::encode(true,'',$records,
+			array('id','record_no','custom_type','custom_name','receiver','pay_type','money','profit',
+				'notes','pay_state','finance_state','finance_exception','date',
+				array('name'=>'pay_type','col'=>'payType.text'),
+				array('name'=>'user','col'=>'user.name'),
+				array('name'=>'service_point','col'=>'servicePoint.name')),
+			array('total'=>$total));
 		}
 	}
 }

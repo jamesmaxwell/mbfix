@@ -16,6 +16,9 @@
  * @property double $profit
  * @property string $notes
  * @property integer $date
+ * @property integer $pay_state
+ * @property integer $finance_state
+ * @property string $finance_exception
  *
  * The followings are the available model relations:
  * @property PayType $payType
@@ -24,6 +27,26 @@
  */
 class TurnoverIncome extends CActiveRecord
 {
+	/**
+	 * 已付款
+	 */
+	const PAYSTATE_PAID = 1;
+	
+	/**
+	 * 未付款
+	 */
+	const PAYSTATE_NOTPAY = 2;
+	
+	/**
+	 * 财务已核销
+	 */
+	const FINANCE_CHECKED = 1;
+	
+	/**
+	 * 财务核销异常
+	 */
+	const FINANCE_NOTCHECKED = 2;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -51,14 +74,14 @@ class TurnoverIncome extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id, service_point_id, money', 'required'),
-			array('user_id, service_point_id, custom_type, pay_type, date', 'numerical', 'integerOnly'=>true),
+			array('user_id, service_point_id, custom_type,pay_state, finance_state, pay_type, date', 'numerical', 'integerOnly'=>true),
 			array('money, profit', 'numerical'),
 			array('record_no, custom_name', 'length', 'max'=>45),
 			array('receiver', 'length', 'max'=>20),
-			array('notes', 'length', 'max'=>300),
+			array('notes, finance_exception', 'length', 'max'=>300),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, service_point_id, record_no, custom_type, custom_name, receiver, pay_type, money, profit, notes, date', 'safe', 'on'=>'search'),
+			array('id, user_id, service_point_id, record_no, custom_type, custom_name, receiver, pay_type,finance_exception, pay_state, finance_state,money, profit, notes, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -90,6 +113,9 @@ class TurnoverIncome extends CActiveRecord
 			'custom_name' => 'Custom Name',
 			'receiver' => 'Receiver',
 			'pay_type' => 'Pay Type',
+			'pay_state' => 'Pay State',
+			'finance_state' => 'Finance State',
+			'finance_exception' => 'Finance Exception',
 			'money' => 'Money',
 			'profit' => 'Profit',
 			'notes' => 'Notes',

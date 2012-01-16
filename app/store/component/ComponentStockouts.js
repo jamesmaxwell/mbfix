@@ -1,3 +1,6 @@
+/**
+* 备件出库Store
+*/
 Ext.define('Mbfix.store.component.ComponentStockouts',{
 	extend : 'Ext.data.Store',
 	model : 'Mbfix.model.ComponentStockout',
