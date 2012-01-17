@@ -19,6 +19,8 @@
  * @property integer $pay_state
  * @property integer $finance_state
  * @property string $finance_exception
+ * @property integer $finance_date
+ * @property integer $finance_user_id
  *
  * The followings are the available model relations:
  * @property PayType $payType
@@ -36,6 +38,11 @@ class TurnoverIncome extends CActiveRecord
 	 * 未付款
 	 */
 	const PAYSTATE_NOTPAY = 2;
+	
+	/**
+	 * 待核销状态
+	 */
+	const FINANCE_UNVIEWED = 0;
 	
 	/**
 	 * 财务已核销
@@ -74,14 +81,14 @@ class TurnoverIncome extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id, service_point_id, money', 'required'),
-			array('user_id, service_point_id, custom_type,pay_state, finance_state, pay_type, date', 'numerical', 'integerOnly'=>true),
+			array('user_id, service_point_id, custom_type,pay_state, finance_user_id,finance_state, pay_type, date,finance_date', 'numerical', 'integerOnly'=>true),
 			array('money, profit', 'numerical'),
 			array('record_no, custom_name', 'length', 'max'=>45),
 			array('receiver', 'length', 'max'=>20),
 			array('notes, finance_exception', 'length', 'max'=>300),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, service_point_id, record_no, custom_type, custom_name, receiver, pay_type,finance_exception, pay_state, finance_state,money, profit, notes, date', 'safe', 'on'=>'search'),
+			array('id, user_id, service_point_id, record_no, custom_type, custom_name, receiver,finance_date,finance_user_id, pay_type,finance_exception, pay_state, finance_state,money, profit, notes, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -96,6 +103,8 @@ class TurnoverIncome extends CActiveRecord
 			'payType' => array(self::BELONGS_TO, 'PayType', 'pay_type'),
 			'servicePoint' => array(self::BELONGS_TO, 'ServicePoint', 'service_point_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'customType' => array(self::BELONGS_TO, 'CustomType','custom_type'),
+			'financeUser' => array(self::BELONGS_TO, 'User', 'finance_user_id'),
 		);
 	}
 
@@ -114,8 +123,10 @@ class TurnoverIncome extends CActiveRecord
 			'receiver' => 'Receiver',
 			'pay_type' => 'Pay Type',
 			'pay_state' => 'Pay State',
+			'finance_user_id' => 'Finance User',
 			'finance_state' => 'Finance State',
 			'finance_exception' => 'Finance Exception',
+			'finance_date' => 'Finance Date',
 			'money' => 'Money',
 			'profit' => 'Profit',
 			'notes' => 'Notes',

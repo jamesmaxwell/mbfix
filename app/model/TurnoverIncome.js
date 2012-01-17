@@ -4,6 +4,10 @@
 Ext.define('Mbfix.model.TurnoverIncome',{
 	extend : 'Ext.data.Model',
 	fields : ['id','user','service_point','record_no','custom_type','custom_name','receiver','pay_type'
-		,'money','profit','notes','pay_state','finance_state','finance_exception',
-		{name:'date',type:'date',dataFormat:'U'}]
+		,'money','profit','notes','finance_exception','finance_user',
+		{name:'date',type:'date',dateFormat:'U'},
+		{name:'pay_state',type:'integer'},
+		{name:'finance_state',type:'integer'},
+		{name:'finance_date',type:'date',dateFormat:'U'}
+		]
 });

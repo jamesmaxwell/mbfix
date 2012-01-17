@@ -2,7 +2,6 @@ Ext.define('Mbfix.view.RecordList', {
 	extend : 'Ext.window.Window',
 	alias : 'widget.recordlist',
 	width : 860,
-	height : 550,
 	modal : true,
 	title : '待修列表',
 

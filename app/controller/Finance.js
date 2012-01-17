@@ -6,10 +6,11 @@ Ext.define('Mbfix.controller.Finance', {
 
 	views : ['Home', 'finance.FundApply', 'finance.FundApplyList',
 			'finance.FundVerify', 'finance.Payout', 'finance.PayoutList',
-			'finance.TurnoverIncome','finance.TurnoverIncomeList'],
+			'finance.TurnoverIncome','finance.TurnoverIncomeList',
+			'finance.ConfirmFinanceVerify'],
 	stores : ['finance.FundRecords', 'finance.FundApplyStates',
 			'finance.FundPayTypes', 'finance.TicketTypes','finance.Payouts',
-			'finance.TurnoverIncomes'],
+			'finance.TurnoverIncomes','ServicePoints'],
 
 	init : function() {
 		this.control({
@@ -31,6 +32,9 @@ Ext.define('Mbfix.controller.Finance', {
 					'home #menuAccountVerify' : {
 						click : this.turnoverIncomeList
 					},
+					'home #menuFundSearch' : {
+						click : this.turnoverIncomeList
+					},
 					'fundapply button[action="confirm_apply"]' : {
 						click : this.confirmFundApply
 					},
@@ -45,6 +49,21 @@ Ext.define('Mbfix.controller.Finance', {
 					},
 					'turnoverincome button[action="confirm_income"]' : {
 						click : this.confirmTurnoverIncome
+					},
+					'turnoverincomelist button[action="finance_confirm"]' : {
+						click : this.confirmFinanceVerify
+					},
+					'turnoverincomelist button[action="finance_exception"]' : {
+						click : this.confirmFinanceVerify
+					},
+					'turnoverincomelist #search_button' : {
+						click : this.financeSearch
+					},
+					'confirmfinanceverify button[action="submit"]' : {
+						click : this.submitFinanceVerify
+					},
+					'confirmfinanceverify #finance_state' : {
+						change : this.financeStateChange
 					}
 				});
 	},
@@ -179,11 +198,15 @@ Ext.define('Mbfix.controller.Finance', {
 		button.up('window').down('form').getForm().submit({
 					url : 'index.php?r=finance/payout',
 					success : function(form, action) {
-						Ext.Msg.alert('成功', '费用支出保存成功');
-						button.up('window').close();
+						if(action.result.success){
+							Ext.Msg.alert('成功', '费用支出保存成功');
+							button.up('window').close();
+						}else{
+							Ext.Msg.alert('失败', action.result.errors.message);
+						}
 					},
-					failure : function(form, action) {
-						Ext.Msg.alert('失败', action.result.errors.message);
+					failure : function(form, action) {						
+						Ext.Msg.alert('失败', action.response.responseText);
 					}
 				});
 	},
@@ -223,11 +246,15 @@ Ext.define('Mbfix.controller.Finance', {
 		button.up('window').down('form').getForm().submit({
 					url : 'index.php?r=finance/turnoverIncome',
 					success : function(form, action) {
-						Ext.Msg.alert('成功', '营业款收入保存成功');
-						button.up('window').close();
+						if(action.result.success){
+							Ext.Msg.alert('成功', '营业款收入保存成功');
+							button.up('window').close();
+						}else{
+							Ext.Msg.alert('失败', action.result.errors.message);
+						}
 					},
 					failure : function(form, action) {
-						Ext.Msg.alert('失败', action.result.errors.message);
+						Ext.Msg.alert('失败', action.response.responseText);
 					}
 				});
 	},
@@ -244,5 +271,68 @@ Ext.define('Mbfix.controller.Finance', {
 						;
 					}
 				});
+	},
+	
+	/**
+	 * 财务核销，确认核销或核销异常
+	 */
+	confirmFinanceVerify : function(button){
+		//判断是否有选中记录
+		var win = Ext.widget('confirmfinanceverify');
+		var selModel = button.up('window').down('grid').getSelectionModel();
+		if(selModel.getCount() == 0){
+			Ext.Msg.alert('提示','请选择一行要核销的记录');
+			return;
+		}
+		var form = win.down('form');
+		form.down('#finance_id').setValue(selModel.getSelection()[0].data.id);
+		win.show();	
+		if(button['action'] == 'finance_confirm'){
+			form.down('#finance_state').setValue({'verify':1});
+			form.down('#finance_exception').disable();
+		}else{
+			form.down('#finance_state').setValue({'verify':2});
+			form.down('#finance_exception').enable();
+		}
+	},
+	
+	/**
+	 * 核销操作，状态变更事件
+	 */
+	financeStateChange : function(field, newValue, oldValue){
+		var val = newValue['verify'];
+		if(val == 1){
+			field.up('form').down('#finance_exception').disable();
+		}else{
+			field.up('form').down('#finance_exception').enable();
+		}
+	},
+	
+	/**
+	 * 确定核销事件
+	 */
+	submitFinanceVerify : function(button){
+		button.up('window').down('form').getForm().submit({
+			url : 'index.php?r=finance/financeVerify',
+			success : function(form, action) {
+				if(action.result.success){
+					Ext.Msg.alert('成功', '财务核销保存成功');
+					button.up('window').close();
+					Ext.getCmp('turnoverIncomeListPaging').doRefresh();
+				}else{
+					Ext.Msg.alert('失败', action.result.errors.message);
+				}
+			},
+			failure : function(form, action) {
+				Ext.Msg.alert('失败', action.response.responseText);
+			}
+		});
+	},
+	
+	/**
+	 * 款项综合查询
+	 */
+	financeSearch : function(button){
+		alert('not finished');
 	}
 });

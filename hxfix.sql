@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50517
+Source Server Version : 50518
 Source Host           : localhost:3306
 Source Database       : hxfix
 
 Target Server Type    : MYSQL
-Target Server Version : 50517
+Target Server Version : 50518
 File Encoding         : 65001
 
-Date: 2012-01-13 16:31:05
+Date: 2012-01-17 22:58:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -243,7 +243,7 @@ CREATE TABLE `hx_component_stockout` (
   `unit` varchar(45) NOT NULL COMMENT '数量单位',
   `price` double NOT NULL COMMENT '出库单价',
   `discount` double NOT NULL COMMENT '优惠金额',
-  `receipt_type` int(11) NOT NULL COMMENT '收款情况，1=未收款，2=已收款',
+  `receipt_type` int(11) NOT NULL COMMENT '收款情况，1=已收款，2=未收款',
   `receipt_account` varchar(45) DEFAULT NULL COMMENT '收款账号',
   `pay_type` int(11) DEFAULT NULL COMMENT '收款方式，hx_pay_type表的外键',
   `receiver` varchar(45) DEFAULT NULL COMMENT '收款人',
@@ -709,7 +709,7 @@ INSERT INTO `hx_service_record` VALUES ('2', '1', '1', 'asdfrer', '快递', '1',
 INSERT INTO `hx_service_record` VALUES ('3', '1', '1', 'trhfffrdd', '王小', '2', '', '13433221123', '', '', '', '', '', '2', '1', '1', '遥', '', 'ddfe2344', '1', '3', '', '', '', '', '1', '1322719482');
 INSERT INTO `hx_service_record` VALUES ('4', '1', '1', 'HZ1112014ED738873ED9C', 'dfzz', '1', '', '234234', '', '', '', '', '', '2', '1', '1', 'asf', '', 'asdfsdf', '2', '2', '', '', '', '', '4', '1322727680');
 INSERT INTO `hx_service_record` VALUES ('5', '1', '1', 'HZ1112014ED73CE9AB613', 'zdf', '1', '', '3ws', '', '', '', '', '', '2', '2', '1', 'asdf', '', 'asdfsdf', '1', '2', '', '', '', '', '9', '1322728695');
-INSERT INTO `hx_service_record` VALUES ('6', '1', '1', 'HZ1112074EDF3AC667D5F', '小张', '2', '', '18292028983', '', '', '', '', '', '1', '1', '1', 'L410', '', 'kiuefjsie', '1', '2', '', '', '', '', '9', '1323252540');
+INSERT INTO `hx_service_record` VALUES ('6', '1', '1', 'HZ1112074EDF3AC667D5F', '小张', '2', '', '18292028983', '', '', '', '', '', '1', '1', '1', 'L410', '', 'kiuefjsie', '1', '2', '', '', '', '', '8', '1323252540');
 INSERT INTO `hx_service_record` VALUES ('7', '1', '1', 'asdf3', 'sd', '2', '', 'sdf', 'sdf', '', '', '', '', '1', '2', '1', 'sdf', 'sdf', 'sdf', '1', '1', 'sdf', 'sdf', 'sdf', '', '1', '1324906576');
 INSERT INTO `hx_service_record` VALUES ('8', '1', '1', '123461', '杭州德购', '2', '', '56751449', '', '', '', '', '', '1', '3', '1', '4810T', '', '02912883020', '1', '1', '完好', '无', '无', '', '9', '1325066924');
 
@@ -747,20 +747,29 @@ CREATE TABLE `hx_turnover_income` (
   `profit` double DEFAULT '0' COMMENT '单笔利润',
   `notes` varchar(300) DEFAULT NULL COMMENT '收入备注',
   `date` int(11) DEFAULT NULL COMMENT '收款日期',
+  `pay_state` int(11) NOT NULL DEFAULT '1' COMMENT '收款状态，1＝已收款，2＝未收款',
+  `finance_user_id` int(11) DEFAULT NULL COMMENT '财务核销人',
+  `finance_state` int(11) DEFAULT '0' COMMENT '财务核销状态，0=待核销,1＝已核销，2=核销异常',
+  `finance_exception` varchar(300) DEFAULT NULL COMMENT '核销异常说明',
+  `finance_date` int(11) DEFAULT NULL COMMENT '财务核销时间',
   PRIMARY KEY (`id`),
   KEY `pk_user_id_income` (`user_id`),
   KEY `pk_service_point_income` (`service_point_id`),
   KEY `pk_pay_type_income` (`pay_type`),
+  KEY `pk_custom_type_income` (`custom_type`),
+  KEY `pk_finance_user_id` (`finance_user_id`),
+  CONSTRAINT `pk_finance_user_id` FOREIGN KEY (`finance_user_id`) REFERENCES `hx_user` (`id`),
+  CONSTRAINT `pk_custom_type_income` FOREIGN KEY (`custom_type`) REFERENCES `hx_custom_type` (`id`),
   CONSTRAINT `pk_pay_type_income` FOREIGN KEY (`pay_type`) REFERENCES `hx_pay_type` (`id`),
   CONSTRAINT `pk_service_point_income` FOREIGN KEY (`service_point_id`) REFERENCES `hx_service_point` (`id`),
   CONSTRAINT `pk_user_id_income` FOREIGN KEY (`user_id`) REFERENCES `hx_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='营业款收入明细表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='营业款收入明细表,备件出库和维修项目的收入自动记录在这里。';
 
 -- ----------------------------
 -- Records of hx_turnover_income
 -- ----------------------------
-INSERT INTO `hx_turnover_income` VALUES ('1', '1', '1', null, '1', '王不', '范小', '1', '260', '0', '卖报纸所得', '1326012671');
-INSERT INTO `hx_turnover_income` VALUES ('2', '1', '1', null, null, null, null, '1', '20', '0', '备件出库自动生成，出库编号为 2', null);
+INSERT INTO `hx_turnover_income` VALUES ('1', '1', '1', null, '1', '王不', '范小', '1', '260', '0', '卖报纸所得', '1326012671', '1', '1', '1', null, '1326809592');
+INSERT INTO `hx_turnover_income` VALUES ('2', '1', '1', null, null, null, null, '1', '20', '0', '备件出库自动生成，出库编号为 2', null, '1', '1', '2', '没有发票', '1326809607');
 
 -- ----------------------------
 -- Table structure for `hx_user`
@@ -783,7 +792,7 @@ CREATE TABLE `hx_user` (
 -- ----------------------------
 -- Records of hx_user
 -- ----------------------------
-INSERT INTO `hx_user` VALUES ('1', 'maxwell', 'e10adc3949ba59abbe56e057f20f883e', '1326378398', '', null, 'administrator,accounter,fixer', '0');
+INSERT INTO `hx_user` VALUES ('1', 'maxwell', 'e10adc3949ba59abbe56e057f20f883e', '1326617253', '', null, 'administrator,fixer,storekeeper,accounter', '0');
 INSERT INTO `hx_user` VALUES ('2', 'alice', '753899dc6f5c168044c17da8c2a183bb', null, '', null, 'fixer', '0');
 INSERT INTO `hx_user` VALUES ('3', '小王', '753899dc6f5c168044c17da8c2a183bb', '1326382952', 'xiao wang', null, 'fixer', '0');
 
@@ -819,15 +828,13 @@ CREATE TABLE `hx_user_service_point` (
   KEY `FK_hx_user_service_point_spoint` (`service_point_id`) USING BTREE,
   CONSTRAINT `FK_hx_user_service_point_spoint` FOREIGN KEY (`service_point_id`) REFERENCES `hx_service_point` (`id`),
   CONSTRAINT `FK_hx_user_service_point_user` FOREIGN KEY (`user_id`) REFERENCES `hx_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of hx_user_service_point
 -- ----------------------------
-INSERT INTO `hx_user_service_point` VALUES ('2', '2', '2');
-INSERT INTO `hx_user_service_point` VALUES ('3', '1', '1');
-INSERT INTO `hx_user_service_point` VALUES ('4', '1', '2');
 INSERT INTO `hx_user_service_point` VALUES ('5', '3', '1');
+INSERT INTO `hx_user_service_point` VALUES ('6', '2', '1');
 
 -- ----------------------------
 -- Table structure for `hx_warranty_type`

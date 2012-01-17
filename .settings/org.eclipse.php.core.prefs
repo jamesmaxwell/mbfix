@@ -1,5 +1,6 @@
-#Fri Dec 02 11:02:42 CST 2011
+#Tue Jan 17 20:20:02 CST 2012
 eclipse.preferences.version=1
-include_path=0;/mbfix\u00051;E\:/lamp/yii-1.1.8/framework
+include_path=0;/mbfix
 phpVersion=php5.3
 useShortTags=true
+use_asp_tags_as_php=false

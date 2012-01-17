@@ -48,16 +48,20 @@ class UserController extends CController
 			}
 			if(self::hasRole($roles, User::ROLE_ACCOUNTER)){
 				array_push($account['items'], array('itemId'=>'menuFundVerify','text'=>'款项审核'));
+				array_push($account['items'], array('xtype'=>'menuseparator'));
 				array_push($account['items'], array('itemId'=>'menuAccountVerify','text'=>'账务核销'));
+				//array_push($account['items'], array('xtype'=>'menuseparator'));
 			}
 			if(self::hasRole($roles, User::ROLE_ACCOUNTER) || self::hasRole($roles, User::ROLE_ADMIN)){
 				array_push($account['items'], array('itemId'=>'menuTurnover','text'=>'营业款收入'));
 				array_push($account['items'], array('itemId'=>'menuFundSearch','text'=>'款项综合查询'));
 			}
+			/*
 			if(self::hasRole($roles, User::ROLE_ADMIN)){
 				array_push($account['items'], array('itemId'=>'menuAccountReceivable','text'=>'应收款'));
 				array_push($account['items'], array('itemId'=>'menuAccountPayable','text'=>'应付款'));
 			}
+			*/
 				
 			if(self::hasRole($roles, User::ROLE_ADMIN)){
 				array_push($userAdmin['items'], array('itemId'=>'menuUserAdmin','text'=>'用户管理'));

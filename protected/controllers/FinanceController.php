@@ -209,18 +209,52 @@ class FinanceController extends Controller
 		$criteria->with = array(
 			'payType'=>array('select'=>'text'),
 			'user'=>array('select'=>'name'),
-			'servicePoint'=>array('select'=>'name'));
+			'servicePoint'=>array('select'=>'name'),
+			'customType'=>array('select'=>'text'),
+			'financeUser'=>array('select'=>'name'));
 		$criteria->limit = $limit;
 		$criteria->offset = $offset;
 		$records = TurnoverIncome::model()->findAll($criteria);
 		if($records != null){
 			echo JsonHelper::encode(true,'',$records,
-			array('id','record_no','custom_type','custom_name','receiver','pay_type','money','profit',
-				'notes','pay_state','finance_state','finance_exception','date',
+			array('id','record_no','custom_name','receiver','pay_type','money','profit',
+				'notes','pay_state','finance_state','finance_exception','date','finance_date',
 				array('name'=>'pay_type','col'=>'payType.text'),
 				array('name'=>'user','col'=>'user.name'),
-				array('name'=>'service_point','col'=>'servicePoint.name')),
+				array('name'=>'service_point','col'=>'servicePoint.name'),
+				array('name'=>'custom_type','col'=>'customType.text'),
+				array('name'=>'finance_user','col'=>'financeUser.name')),
 			array('total'=>$total));
 		}
+	}
+	
+	/**
+	 * 
+	 * 确认财务核销动作
+	 */
+	public function actionFinanceVerify(){
+		$verifyResult = $_POST['verify'];
+		$financeId = $_POST['finance_id'];
+		$financeException = $_POST['finance_exception'];
+		$model = TurnoverIncome::model()->find('id=:id',array(':id'=>$financeId));
+		if($model == null){
+			throw new CSysException('没有要核销的记录');
+		}
+		$model->finance_user_id = Yii::app()->user->userId;
+		//1=核销确认，2=核销异常
+		if($verifyResult == 1){
+			$model->finance_state = TurnoverIncome::FINANCE_CHECKED;
+		}else if($verifyResult == 2){
+			$model->finance_state = TurnoverIncome::FINANCE_NOTCHECKED;
+			$model->finance_exception = $financeException;
+		}else{
+			throw new CSysException('核销状态有误');
+		}
+		$model->finance_date = time();
+		if(!$model->save()){
+			echo JsonHelper::encode(false,JsonHelper::encodeError($model->getErrors()));
+			Yii::app()->end();
+		}
+		echo JsonHelper::encode(true);
 	}
 }
