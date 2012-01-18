@@ -1,1 +1,1 @@
-c:\senchasdktools-1.2.3\command\sencha create jsb -v -a e:\lamp\Farseer\html\mbfix\main.html -p e:\lamp\farseer\html\mbfix\app.jsb3
+c:\senchasdktools-1.2.3\command\sencha create jsb -v -a http://localhost:8080/mbfix/main.html -p e:\lamp\farseer\html\mbfix\app.jsb3
