@@ -8,46 +8,762 @@
             "options": {
                 "debug": true
             },
-            "compress": true,
-            "files": []
-        },
-        {
-            "name": "Application - Production",
-            "target": "app-all.js",
-            "compress": true,
             "files": [
                 {
-                    "path": "",
-                    "name": "app.js"
-                }
-				,
-                {
-                    "path": "app/controller/",
-                    "name": "Finance.js"
+                    "path": "ext/src/util/",
+                    "name": "Observable.js"
                 },
                 {
-                    "path": "app/controller/",
-                    "name": "Home.js"
+                    "path": "ext/src/data/",
+                    "name": "IdGenerator.js"
                 },
                 {
-                    "path": "app/controller/",
+                    "path": "ext/src/data/",
+                    "name": "Operation.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Association.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "validations.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "SortTypes.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "HashMap.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Filter.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Sorter.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Connection.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "KeyMap.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Memento.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "CubicBezier.js"
+                },
+                {
+                    "path": "ext/src/panel/",
+                    "name": "Proxy.js"
+                },
+                {
+                    "path": "ext/src/data/writer/",
+                    "name": "Writer.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "Template.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Queue.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "ResultSet.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "StatusProxy.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Target.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ZIndexManager.js"
+                },
+                {
+                    "path": "ext/src/layout/",
+                    "name": "Layout.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "Color.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "KeyNav.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ComponentQuery.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Floating.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Offset.js"
+                },
+                {
+                    "path": "ext/src/layout/container/boxOverflow/",
+                    "name": "None.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "AbstractContainer.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Animate.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "ClickRepeater.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "TextMetrics.js"
+                },
+                {
+                    "path": "ext/src/state/",
+                    "name": "Provider.js"
+                },
+                {
+                    "path": "ext/src/app/",
+                    "name": "Controller.js"
+                },
+                {
+                    "path": "ext/src/app/",
+                    "name": "EventBus.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "AbstractManager.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ModelManager.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ComponentManager.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Types.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Field.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Sortable.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "AbstractMixedCollection.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "MixedCollection.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "StoreManager.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Errors.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "Ajax.js"
+                },
+                {
+                    "path": "ext/src/data/writer/",
+                    "name": "Json.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "XTemplate.js"
+                },
+                {
+                    "path": "ext/src/data/reader/",
+                    "name": "Reader.js"
+                },
+                {
+                    "path": "ext/src/data/reader/",
+                    "name": "Json.js"
+                },
+                {
+                    "path": "ext/src/data/proxy/",
+                    "name": "Proxy.js"
+                },
+                {
+                    "path": "ext/src/data/proxy/",
+                    "name": "Server.js"
+                },
+                {
+                    "path": "ext/src/data/proxy/",
+                    "name": "Ajax.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Model.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Easing.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Sprite.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Element.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "CompositeElement.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "CompositeSprite.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "AbstractDock.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "Dock.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "Tip.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "PropertyHandler.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Animator.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Anim.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "FocusManager.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Region.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "DragDropManager.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "Auto.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "DragDrop.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "DD.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "DDProxy.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "DragSource.js"
+                },
+                {
+                    "path": "ext/src/panel/",
+                    "name": "DD.js"
+                },
+                {
+                    "path": "ext/src/layout/container/boxOverflow/",
+                    "name": "Scroller.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "ext/src/menu/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "ext/src/state/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "ext/src/state/",
+                    "name": "Stateful.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "AbstractComponent.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "ext/src/container/",
+                    "name": "AbstractContainer.js"
+                },
+                {
+                    "path": "ext/src/container/",
+                    "name": "Container.js"
+                },
+                {
+                    "path": "ext/src/panel/",
+                    "name": "Header.js"
+                },
+                {
+                    "path": "ext/src/toolbar/",
+                    "name": "Fill.js"
+                },
+                {
+                    "path": "ext/src/button/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "ext/src/toolbar/",
+                    "name": "Item.js"
+                },
+                {
+                    "path": "ext/src/toolbar/",
+                    "name": "Separator.js"
+                },
+                {
+                    "path": "ext/src/layout/container/boxOverflow/",
+                    "name": "Menu.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "Box.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "VBox.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "HBox.js"
+                },
+                {
+                    "path": "ext/src/toolbar/",
+                    "name": "Toolbar.js"
+                },
+                {
+                    "path": "ext/src/panel/",
+                    "name": "AbstractPanel.js"
+                },
+                {
+                    "path": "ext/src/panel/",
+                    "name": "Panel.js"
+                },
+                {
+                    "path": "ext/src/tip/",
+                    "name": "Tip.js"
+                },
+                {
+                    "path": "ext/src/tip/",
+                    "name": "ToolTip.js"
+                },
+                {
+                    "path": "ext/src/tip/",
+                    "name": "QuickTip.js"
+                },
+                {
+                    "path": "ext/src/tip/",
+                    "name": "QuickTipManager.js"
+                },
+                {
+                    "path": "ext/src/app/",
+                    "name": "Application.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Point.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Request.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Batch.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "Layer.js"
+                },
+                {
+                    "path": "ext/src/resizer/",
+                    "name": "Resizer.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "LoadMask.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "Auto.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "PluginManager.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "CSS.js"
+                },
+                {
+                    "path": "ext/src/panel/",
+                    "name": "Tool.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ElementLoader.js"
+                },
+                {
+                    "path": "ext/src/menu/",
+                    "name": "KeyNav.js"
+                },
+                {
+                    "path": "ext/src/menu/",
+                    "name": "Item.js"
+                },
+                {
+                    "path": "ext/src/dd/",
+                    "name": "DragTracker.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "AbstractFit.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "Grouper.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "AbstractStore.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "CompositeSprite.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ComponentLoader.js"
+                },
+                {
+                    "path": "ext/src/util/",
+                    "name": "ComponentDragger.js"
+                },
+                {
+                    "path": "ext/src/window/",
+                    "name": "Window.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "Store.js"
+                },
+                {
+                    "path": "ext/src/data/",
+                    "name": "ArrayStore.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "Fit.js"
+                },
+                {
+                    "path": "ext/src/menu/",
+                    "name": "CheckItem.js"
+                },
+                {
+                    "path": "ext/src/menu/",
+                    "name": "Separator.js"
+                },
+                {
+                    "path": "ext/src/menu/",
+                    "name": "Menu.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "Surface.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "ext/src/data/reader/",
+                    "name": "Array.js"
+                },
+                {
+                    "path": "ext/src/resizer/",
+                    "name": "ResizeTracker.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ShadowPool.js"
+                },
+                {
+                    "path": "ext/src/data/proxy/",
+                    "name": "Client.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "Matrix.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "SpriteDD.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "Shadow.js"
+                },
+                {
+                    "path": "ext/src/data/proxy/",
+                    "name": "Memory.js"
+                },
+                {
+                    "path": "ext/src/draw/",
+                    "name": "Sprite.js"
+                },
+                {
+                    "path": "ext/src/draw/engine/",
+                    "name": "Vml.js"
+                },
+                {
+                    "path": "ext/src/draw/engine/",
+                    "name": "Svg.js"
+                },
+                {
+                    "path": "ext/src/container/",
+                    "name": "Viewport.js"
+                },
+                {
+                    "path": "app/view/",
                     "name": "Record.js"
                 },
                 {
-                    "path": "app/controller/",
+                    "path": "app/view/",
+                    "name": "Home.js"
+                },
+                {
+                    "path": "app/view/",
                     "name": "Repair.js"
                 },
                 {
-                    "path": "app/controller/",
-                    "name": "TypeAdmin.js"
+                    "path": "app/view/",
+                    "name": "CustomContactList.js"
                 },
                 {
-                    "path": "app/controller/",
-                    "name": "User.js"
+                    "path": "app/view/",
+                    "name": "RecordList.js"
                 },
                 {
-                    "path": "app/model/",
-                    "name": "CommonType.js"
+                    "path": "app/view/",
+                    "name": "ComponentApply.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "ComponentSearch.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "TypeAdminBase.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "MachineTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "ComponentBrandAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "ContactTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "RepairTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "ProblemTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "WarrantyTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "ComponentModelAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "PurchaseTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "LogisticsTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "PayTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "FinishRecord.js"
+                },
+                {
+                    "path": "app/view/component/",
+                    "name": "ApplyList.js"
+                },
+                {
+                    "path": "app/view/user/",
+                    "name": "UserAdmin.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "RecordStates.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "FundApply.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "PayoutList.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "Payout.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "FundVerify.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "FundApplyList.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "TurnoverIncome.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "TurnoverIncomeList.js"
+                },
+                {
+                    "path": "app/store/finance/",
+                    "name": "TicketTypes.js"
+                },
+                {
+                    "path": "app/store/finance/",
+                    "name": "FundPayTypes.js"
+                },
+                {
+                    "path": "app/store/finance/",
+                    "name": "FundApplyStates.js"
+                },
+                {
+                    "path": "app/view/finance/",
+                    "name": "ConfirmFinanceVerify.js"
+                },
+                {
+                    "path": "app/view/component/",
+                    "name": "ComponentAccept.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "ServicePointAdmin.js"
+                },
+                {
+                    "path": "app/view/user/",
+                    "name": "RoleAdmin.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Login.js"
+                },
+                {
+                    "path": "app/view/component/",
+                    "name": "ComponentPurchase.js"
+                },
+                {
+                    "path": "app/view/component/",
+                    "name": "ComponentSotckoutList.js"
+                },
+                {
+                    "path": "app/view/component/",
+                    "name": "ComponentStockout.js"
+                },
+                {
+                    "path": "app/view/component/",
+                    "name": "PurchaseList.js"
+                },
+                {
+                    "path": "app/store/component/",
+                    "name": "ComponentStockSellfors.js"
                 },
                 {
                     "path": "app/model/",
@@ -55,7 +771,43 @@
                 },
                 {
                     "path": "app/model/",
-                    "name": "ComponentPurchase.js"
+                    "name": "RepairComponent.js"
+                },
+                {
+                    "path": "app/store/component/",
+                    "name": "ComponentReceiptTypes.js"
+                },
+                {
+                    "path": "app/store/component/",
+                    "name": "ComponentStockSellTypes.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "CustomContact.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Role.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "ServicePoint.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "User.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "ServiceRecord.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "CommonType.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "FundRecord.js"
                 },
                 {
                     "path": "app/model/",
@@ -63,55 +815,83 @@
                 },
                 {
                     "path": "app/model/",
-                    "name": "CustomContact.js"
-                }
-				,
-                {
-                    "path": "app/model/",
-                    "name": "FundRecord.js"
-                }
-				,
-                {
-                    "path": "app/model/",
                     "name": "Notice.js"
-                }
-				,
+                },
                 {
                     "path": "app/model/",
-                    "name": "Payout.js"
-                }
-				,
-                {
-                    "path": "app/model/",
-                    "name": "RepairComponent.js"
-                }
-				,
-                {
-                    "path": "app/model/",
-                    "name": "Role.js"
-                }
-				,
-                {
-                    "path": "app/model/",
-                    "name": "ServicePoint.js"
-                }
-				,
-                {
-                    "path": "app/model/",
-                    "name": "ServiceRecord.js"
-                }
-				,
+                    "name": "ComponentPurchase.js"
+                },
                 {
                     "path": "app/model/",
                     "name": "TurnoverIncome.js"
                 },
                 {
                     "path": "app/model/",
-                    "name": "User.js"
+                    "name": "Payout.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Viewport.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "RepairComponents.js"
                 },
                 {
                     "path": "app/store/",
                     "name": "ComponentApplys.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "CustomContacts.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Repair.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "MachineBrandAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "ServiceTypeAdmin.js"
+                },
+                {
+                    "path": "app/view/admin/",
+                    "name": "CustomTypeAdmin.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "MachineBrands.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "CustomTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "MachineTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ContactTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "RepairTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ProblemTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "WarrantyTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ServiceTypes.js"
                 },
                 {
                     "path": "app/store/",
@@ -123,15 +903,90 @@
                 },
                 {
                     "path": "app/store/",
+                    "name": "PurchaseTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "LogisticsTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "PayTypes.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "TypeAdmin.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ServiceRecords.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Users.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ServicePoints.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Record.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Roles.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "User.js"
+                },
+                {
+                    "path": "app/store/finance/",
+                    "name": "FundRecords.js"
+                },
+                {
+                    "path": "app/store/finance/",
+                    "name": "Payouts.js"
+                },
+                {
+                    "path": "app/store/finance/",
+                    "name": "TurnoverIncomes.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Finance.js"
+                },
+                {
+                    "path": "app/store/",
                     "name": "ComponentPurchases.js"
                 },
                 {
                     "path": "app/store/",
-                    "name": "ContactTypes.js"
+                    "name": "Notices.js"
                 },
                 {
-                    "path": "app/store/",
-                    "name": "CustomContacts.js"
+                    "path": "app/store/component/",
+                    "name": "ComponentStockouts.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Home.js"
+                }
+            ]
+        },
+        {
+            "name": "Application - Production",
+            "target": "app-all.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "",
+                    "name": "all-classes.js"
+                },
+                {
+                    "path": "",
+                    "name": "app.js"
                 }
             ]
         }

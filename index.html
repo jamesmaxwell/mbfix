@@ -5,10 +5,10 @@
       <!--[if IE]>
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <![endif]--> 
-      <title>Login to mbfix.com</title>
+      <title>正修维修管理系统</title>
       <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon" />        
 	  <link type="text/css" rel="stylesheet" href="css/login.css?v=1" />
-	  <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     </head>
     <body class="hsdmz">
       <div class="page">        
@@ -100,8 +100,8 @@
 			}
 			if(errorMsg.length == 0){
 				$.post('index.php?r=user/login',{username:username,password:password,servicePoint:servicePoint},function(data, textStatus, jqXHR){
-					if(data.success){
-						location.href = 'main.html';
+					if(data.success){						
+						location.href = data.page;
 					}else{
 						alert(data.errors);
 					}
@@ -110,7 +110,7 @@
 					alert(data);
 				});
 			}else{
-				alert(errorMsg.join('<br/>'));
+				alert(errorMsg.join(','));
 			}
 		});
 	});

@@ -11683,3 +11683,637 @@ in F:\Farseer\html\mbfix\index.php (46)
 2012/01/17 22:57:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT `t`.`id` AS `t0_c0`, `t`.`user_id` AS `t0_c1`, `t`.`service_point_id` AS `t0_c2`, `t`.`record_no` AS `t0_c3`, `t`.`custom_type` AS `t0_c4`, `t`.`custom_name` AS `t0_c5`, `t`.`receiver` AS `t0_c6`, `t`.`pay_type` AS `t0_c7`, `t`.`money` AS `t0_c8`, `t`.`profit` AS `t0_c9`, `t`.`notes` AS `t0_c10`, `t`.`date` AS `t0_c11`, `t`.`pay_state` AS `t0_c12`, `t`.`finance_user_id` AS `t0_c13`, `t`.`finance_state` AS `t0_c14`, `t`.`finance_exception` AS `t0_c15`, `t`.`finance_date` AS `t0_c16`, `payType`.`text` AS `t1_c1`, `payType`.`id` AS `t1_c0`, `user`.`name` AS `t2_c1`, `user`.`id` AS `t2_c0`, `user`.`name` AS `t2_c1`, `servicePoint`.`name` AS `t3_c1`, `servicePoint`.`id` AS `t3_c0`, `servicePoint`.`name` AS `t3_c1`, `servicePoint`.`short_name` AS `t3_c2`, `customType`.`text` AS `t4_c1`, `customType`.`id` AS `t4_c0`, `financeUser`.`name` AS `t5_c1`, `financeUser`.`id` AS `t5_c0`, `financeUser`.`name` AS `t5_c1` FROM `hx_turnover_income` `t`  LEFT OUTER JOIN `hx_pay_type` `payType` ON (`t`.`pay_type`=`payType`.`id`)  LEFT OUTER JOIN `hx_user` `user` ON (`t`.`user_id`=`user`.`id`)  LEFT OUTER JOIN `hx_service_point` `servicePoint` ON (`t`.`service_point_id`=`servicePoint`.`id`)  LEFT OUTER JOIN `hx_custom_type` `customType` ON (`t`.`custom_type`=`customType`.`id`)  LEFT OUTER JOIN `hx_user` `financeUser` ON (`t`.`finance_user_id`=`financeUser`.`id`)  ORDER BY t.date desc LIMIT 25
 in F:\Farseer\html\mbfix\protected\controllers\FinanceController.php (217)
 in F:\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:07:13 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:07:13 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:07:13 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:07:14 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:07:14 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:07:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1326949632929
+HTTP_REFERER=http://localhost:8080/mbfix/main.html
+---
+2012/01/19 13:16:34 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:16:34 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:16:34 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:16:34 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:16:34 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:16:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1326950194936
+HTTP_REFERER=http://localhost:8080/mbfix/main.html
+---
+2012/01/19 13:17:37 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:17:37 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:17:37 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:17:37 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:17:37 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:17:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1326950257081
+HTTP_REFERER=http://localhost:8080/mbfix/main.html
+---
+2012/01/19 13:52:59 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:52:59 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:52:59 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:52:59 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:52:59 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:52:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:20 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:53:20 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:53:20 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:20 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:20 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:22 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:53:22 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:53:23 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:23 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:23 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:53:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:55:33 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:55:33 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.db.ar.CActiveRecord] ServicePoint.findAll()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:55:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t`
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:22 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:22 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.db.ar.CActiveRecord] ServicePoint.findAll()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t`
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:36 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:36 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:36 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:36 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:36 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:40 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:40 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:40 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:40 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:40 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:57:45 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:57:45 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (26)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name and password=:password and deleted = 0 LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (26)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "securityManager" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.CModule] Loading "statePersister" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.ar.CActiveRecord] ServicePoint.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t` WHERE id=:id LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (165)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (165)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.ar.CActiveRecord] User.update()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:45 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `hx_user` SET `id`=:yp0, `name`=:yp1, `password`=:yp2, `lastlogin`=:yp3, `notes`=:yp4, `loginkey`=:yp5, `deleted`=:yp6, `roles`=:yp7 WHERE `hx_user`.`id`=1 AND `hx_user`.`name`='maxwell'
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "authManager" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\RoleController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.ar.CActiveRecord] ServicePoint.findAll()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t`
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:58 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:58 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:57:58 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:58 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:58 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:57:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:58:16 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:58:16 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (26)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name and password=:password and deleted = 0 LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (26)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "securityManager" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.CModule] Loading "statePersister" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.ar.CActiveRecord] ServicePoint.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t` WHERE id=:id LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (165)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (165)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.ar.CActiveRecord] User.update()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:16 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `hx_user` SET `id`=:yp0, `name`=:yp1, `password`=:yp2, `lastlogin`=:yp3, `notes`=:yp4, `loginkey`=:yp5, `deleted`=:yp6, `roles`=:yp7 WHERE `hx_user`.`id`=2 AND `hx_user`.`name`='alice'
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (128)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (134)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.ar.CActiveRecord] ServicePoint.findAll()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t`
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (23)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:58:19 [trace] [system.CModule] Loading "authManager" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\RoleController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:17 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:59:17 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:59:17 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:17 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:17 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (15)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT `c`.`id`, `c`.`name`, `c`.`short_name`, `c`.`desc`
+FROM `hx_user` `a`
+JOIN `hx_user_service_point` `b` ON b.user_id = a.id
+JOIN `hx_service_point` `c` ON c.id = b.service_point_id
+WHERE a.name = :username
+in E:\lamp\Farseer\html\mbfix\protected\controllers\ServicePointController.php (21)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "log" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "request" application component
+in E:\lamp\Farseer\html\mbfix\index.php (12)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "urlManager" application component
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "db" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:59:21 [trace] [system.db.CDbConnection] Opening DB connection
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_user`
+in E:\lamp\Farseer\html\mbfix\protected\models\User.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (23)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+2012/01/19 13:59:21 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (26)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name and password=:password and deleted = 0 LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\components\UserIdentity.php (26)
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (53)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "user" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "session" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "securityManager" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.CModule] Loading "statePersister" application component
+in E:\lamp\Farseer\html\mbfix\protected\models\LoginForm.php (58)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (162)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `hx_service_point`
+in E:\lamp\Farseer\html\mbfix\protected\models\ServicePoint.php (25)
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.ar.CActiveRecord] ServicePoint.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_service_point` `t` WHERE id=:id LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (164)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.ar.CActiveRecord] User.find()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (165)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `hx_user` `t` WHERE name=:name LIMIT 1
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (165)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.ar.CActiveRecord] User.update()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `hx_user` SET `id`=:yp0, `name`=:yp1, `password`=:yp2, `lastlogin`=:yp3, `notes`=:yp4, `loginkey`=:yp5, `deleted`=:yp6, `roles`=:yp7 WHERE `hx_user`.`id`=1 AND `hx_user`.`name`='maxwell'
+in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
+in E:\lamp\Farseer\html\mbfix\index.php (46)

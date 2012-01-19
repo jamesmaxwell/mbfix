@@ -169,7 +169,11 @@ class UserController extends CController
 			//保存用户最后登录时间
 			$user->lastlogin = time();
 			$user->save();
-			echo JsonHelper::encode(true);
+			if(YII_DEBUG){
+				echo JsonHelper::encode(true,'',array(),array(),array('page'=>'main-test.html'));
+			}else{
+				echo JsonHelper::encode(true,'',array(),array(),array('page'=>'main.html'));
+			}
 		}else{
 			echo JsonHelper::encode(false,$model->getError('message'));
 		}

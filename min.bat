@@ -1,0 +1,1 @@
+jsmin < app-all.js > app-all.min.js "(c) 2012 James Maxwell"
