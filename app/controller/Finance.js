@@ -258,19 +258,40 @@ Ext.define('Mbfix.controller.Finance', {
 					}
 				});
 	},
+		
+	/**
+	 * 重置款项 Proxy 的其它参数
+	 * 
+	 * @param {Ext.data.Proxy}
+	 *            proxy
+	 */
+	_clearExtraParams : function(proxy) {
+		for (var key in proxy.extraParams) {
+			proxy.extraParams[key] = null;
+		}
+	},
+	
+	/**
+	* 加载财务核销记录
+	*/
+	_loadTurnoverIncomeList : function(store){
+		store.loadPage(1, {
+			scope : this,
+			callback : function(records, response, opts) {
+				;
+			}
+		});
+	},
 	
 	/**
 	* 营业款收入列表(财务核销)窗口
 	*/
 	turnoverIncomeList : function(button){
-		var win = Ext.widget('turnoverincomelist');
+		var win = Ext.widget('turnoverincomelist'),
+			store = win.down('grid').getStore();
 		win.show();
-		win.down('grid').getStore().loadPage(1, {
-					scope : this,
-					callback : function(records, response, opts) {
-						;
-					}
-				});
+		this._clearExtraParams(store.getProxy());
+		this._loadTurnoverIncomeList(store);
 	},
 	
 	/**
@@ -282,9 +303,16 @@ Ext.define('Mbfix.controller.Finance', {
 		var selModel = button.up('window').down('grid').getSelectionModel();
 		if(selModel.getCount() == 0){
 			Ext.Msg.alert('提示','请选择一行要核销的记录');
-			return;
+			win.destroy();
+			return false;
 		}
 		var form = win.down('form');
+		var record = selModel.getSelection()[0].data;
+		if(record.finance_state != 0){
+			Ext.Msg.alert('提示','该记录已核销，不能再操作了。');
+			win.destroy();
+			return false;
+		}
 		form.down('#finance_id').setValue(selModel.getSelection()[0].data.id);
 		win.show();	
 		if(button['action'] == 'finance_confirm'){
@@ -333,6 +361,30 @@ Ext.define('Mbfix.controller.Finance', {
 	 * 款项综合查询
 	 */
 	financeSearch : function(button){
-		alert('not finished');
+		var store = Ext.getStore('finance.TurnoverIncomes');
+		var proxy = store.getProxy();
+		this._clearExtraParams(proxy); // 先重置参数
+		var form = button.up('window').down('form');
+		var recordNo = form.down('#finance_recordNo').getValue(),
+			servicePoint = form.down('#finance_service_point').getValue(),
+			beginDate = form.down('#search_beginDate').getValue(),
+			endDate = form.down('#search_endDate').getValue(),
+			financeFilter = form.down('#finance_filter').getValue();
+		if (!Ext.isEmpty(recordNo)) {
+			proxy.extraParams.recordNo = recordNo;
+		}
+		if (!Ext.isEmpty(servicePoint)) {
+			proxy.extraParams.servicePoint = servicePoint;
+		}
+		if (!Ext.isEmpty(beginDate)) {
+			proxy.extraParams.beginDate = beginDate;
+		}
+		if (!Ext.isEmpty(endDate)) {
+			proxy.extraParams.endDate = endDate;
+		}
+		if (!Ext.isEmpty(financeFilter)) {
+			proxy.extraParams.financeFilter = financeFilter;
+		}
+		this._loadTurnoverIncomeList(store);
 	}
 });

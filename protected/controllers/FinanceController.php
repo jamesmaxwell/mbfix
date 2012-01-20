@@ -201,10 +201,42 @@ class FinanceController extends Controller
 	* 营业款收入列表，用于财务核销
 	*/
 	public function actionTurnoverIncomeList(){
-		$limit = $_GET['limit'];
-		$offset = $_GET['start'];
+		$limit = $_POST['limit'];
+		$offset = $_POST['start'];
+		//处理可能的查询条件
+		$recordNo = $_POST['recordNo'];
+		$servicePoint = $_POST['servicePoint'];
+		$beginDate = $_POST['beginDate'];
+		$endDate = $_POST['endDate'];
+		$financeFilter = $_POST['financeFilter'];
+		
 		$criteria = new CDbCriteria();
 		$criteria->order = 't.date desc';
+		if(!empty($recordNo)){
+			$criteria->addCondition('t.record_no = \'' . $recrodNo . '\'');
+		}
+		if(!empty($servicePoint)){
+			$criteria->addCondition('t.service_point_id = ' . $servicePoint);
+		}
+		if(!empty($beginDate)){
+			$bDate = strtotime($beginDate);
+			if($bDate != false){
+				$criteria->addCondition('t.date >= '. $bDate);
+			}
+		}
+		if(!empty($endDate)){
+			$eDate = strtotime($endDate);
+			if($eDate != false){
+				$criteria->addCondition('t.date <= '. $eDate);
+			}
+		}
+		if(!empty($financeFilter)){
+			// [0, '全部'], [1, '应收款'],[2, '应付款'],[3, '其它营业款']
+			//TODO: 如何来正确区别'应收款','应付款'--------------------------------
+			//$criteria->addCondition('t.pay_state = ' . $financeFilter);
+		}
+		
+		//取总记录数
 		$total = TurnoverIncome::model()->count($criteria);
 		$criteria->with = array(
 			'payType'=>array('select'=>'text'),

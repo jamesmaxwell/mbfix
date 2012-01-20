@@ -1,4 +1,22 @@
-﻿Ext.Loader.setConfig({
+/**
+* 通用帮助类
+*/
+Ext.define('Mbfix.Util',{
+	/**
+	* 默认的页面地址
+	*/
+	defaultPage : 'index.php',
+	
+	/**
+	* 根据控制器，动作和参数生成最终的URL地址
+	*/
+	getUrl : function(controller, action, parameter){
+		//TODO: 处理可能的参数
+		return Ext.String.format('{0}r={1}/{2}',defaultPage, controller, action);
+	}
+});
+
+Ext.Loader.setConfig({
 			enabled : true
 		});
 

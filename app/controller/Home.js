@@ -411,7 +411,7 @@ Ext.define('Mbfix.controller.Home', {
 	},
 
 	/**
-	 * 重置 Proxy 的其它参数
+	 * 重置服务单 Proxy 的其它参数
 	 * 
 	 * @param {Ext.data.Proxy}
 	 *            proxy
