@@ -61,6 +61,13 @@
     <script type="text/javascript">
 	var lastUserName;
 	$(function(){
+		$(document).keypress(function(evt){
+			if(evt.which == '13'){
+				$('#loginBtn').click();
+				evt.preventDefault();
+			}
+		});
+		
 		$('#username').change(function(evt){
 			var username = $.trim($('#username').val());
 			if(username.length == 0){

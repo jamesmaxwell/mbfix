@@ -2,6 +2,16 @@
 			enabled : true
 		});
 
+
+Ext.require(['Ext.button.Button','Ext.Component','Ext.container.Container','Ext.grid.Panel',
+'Ext.window.Window','Ext.form.Panel','Ext.container.Viewport','Ext.toolbar.Toolbar','Ext.toolbar.Spacer',
+'Ext.form.FieldSet','Ext.form.field.ComboBox','Ext.form.field.Date','Ext.form.field.Display',
+'Ext.form.field.Hidden','Ext.form.Label','Ext.form.field.Number',
+'Ext.form.field.Radio','Ext.form.field.TextArea','Ext.form.field.Text',
+'Ext.form.field.Checkbox','Ext.toolbar.Paging','Ext.toolbar.Fill','Ext.toolbar.Item',
+'Ext.toolbar.Separator','Ext.toolbar.TextItem','Ext.view.View',
+'Ext.menu.Menu','Ext.menu.Item','Ext.menu.Separator','Ext.grid.plugin.Editing']);
+
 Ext.application({
 			name : 'Mbfix',
 			appFolder : 'app',

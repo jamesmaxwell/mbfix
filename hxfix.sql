@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50518
+Source Server Version : 50517
 Source Host           : localhost:3306
 Source Database       : hxfix
 
 Target Server Type    : MYSQL
-Target Server Version : 50518
+Target Server Version : 50517
 File Encoding         : 65001
 
-Date: 2012-01-17 22:58:10
+Date: 2012-01-20 10:21:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -787,14 +787,15 @@ CREATE TABLE `hx_user` (
   PRIMARY KEY (`id`,`name`),
   UNIQUE KEY `name_UNIQUE` (`name`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='用户表';
 
 -- ----------------------------
 -- Records of hx_user
 -- ----------------------------
-INSERT INTO `hx_user` VALUES ('1', 'maxwell', 'e10adc3949ba59abbe56e057f20f883e', '1326617253', '', null, 'administrator,fixer,storekeeper,accounter', '0');
-INSERT INTO `hx_user` VALUES ('2', 'alice', '753899dc6f5c168044c17da8c2a183bb', null, '', null, 'fixer', '0');
+INSERT INTO `hx_user` VALUES ('1', 'maxwell', 'e10adc3949ba59abbe56e057f20f883e', '1327026076', '', null, 'administrator,fixer,storekeeper,accounter', '0');
+INSERT INTO `hx_user` VALUES ('2', 'alice', '753899dc6f5c168044c17da8c2a183bb', '1327025782', '', null, 'fixer', '0');
 INSERT INTO `hx_user` VALUES ('3', '小王', '753899dc6f5c168044c17da8c2a183bb', '1326382952', 'xiao wang', null, 'fixer', '0');
+INSERT INTO `hx_user` VALUES ('4', 'admin', '753899dc6f5c168044c17da8c2a183bb', null, '请务删除', null, 'administrator,storekeeper,fixer,accounter', '0');
 
 -- ----------------------------
 -- Table structure for `hx_user_role`
@@ -828,13 +829,15 @@ CREATE TABLE `hx_user_service_point` (
   KEY `FK_hx_user_service_point_spoint` (`service_point_id`) USING BTREE,
   CONSTRAINT `FK_hx_user_service_point_spoint` FOREIGN KEY (`service_point_id`) REFERENCES `hx_service_point` (`id`),
   CONSTRAINT `FK_hx_user_service_point_user` FOREIGN KEY (`user_id`) REFERENCES `hx_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of hx_user_service_point
 -- ----------------------------
-INSERT INTO `hx_user_service_point` VALUES ('5', '3', '1');
+INSERT INTO `hx_user_service_point` VALUES ('5', '1', '1');
 INSERT INTO `hx_user_service_point` VALUES ('6', '2', '1');
+INSERT INTO `hx_user_service_point` VALUES ('7', '4', '1');
+INSERT INTO `hx_user_service_point` VALUES ('8', '4', '2');
 
 -- ----------------------------
 -- Table structure for `hx_warranty_type`

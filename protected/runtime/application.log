@@ -12317,3 +12317,137 @@ in E:\lamp\Farseer\html\mbfix\index.php (46)
 2012/01/19 13:59:21 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `hx_user` SET `id`=:yp0, `name`=:yp1, `password`=:yp2, `lastlogin`=:yp3, `notes`=:yp4, `loginkey`=:yp5, `deleted`=:yp6, `roles`=:yp7 WHERE `hx_user`.`id`=1 AND `hx_user`.`name`='maxwell'
 in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php (171)
 in E:\lamp\Farseer\html\mbfix\index.php (46)
+2012/01/20 08:50:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327020649164
+HTTP_REFERER=http://localhost:8080/mbfix/main-test.html
+---
+2012/01/20 08:52:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327020759311
+HTTP_REFERER=http://localhost:8080/mbfix/main-test.html
+---
+2012/01/20 08:53:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327020831400
+HTTP_REFERER=http://localhost:8080/mbfix/main-test.html
+---
+2012/01/20 09:03:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327021389634
+HTTP_REFERER=http://localhost:8080/mbfix/main-test.html
+---
+2012/01/20 09:12:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327021947317
+HTTP_REFERER=http://localhost:8080/mbfix/main-test.html
+---
+2012/01/20 09:13:43 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "financeUser" in active record class "TurnoverIncome" is specified with an invalid foreign key "finance_user_id". There is no such column in the table "hx_turnover_income".' in E:\lamp\Farseer\html\framework\db\ar\CActiveFinder.php:1101
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\db\ar\CActiveFinder.php(1074): CJoinElement->joinOneMany(Object(CJoinElement), Array, Object(CJoinElement), Object(CJoinElement))
+#1 E:\lamp\Farseer\html\framework\db\ar\CActiveFinder.php(1301): CJoinElement->getJoinCondition()
+#2 E:\lamp\Farseer\html\framework\db\ar\CActiveFinder.php(805): CJoinQuery->join(Object(CJoinElement))
+#3 E:\lamp\Farseer\html\framework\db\ar\CActiveFinder.php(450): CJoinElement->buildQuery(Object(CJoinQuery))
+#4 E:\lamp\Farseer\html\framework\db\ar\CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#5 E:\lamp\Farseer\html\framework\db\ar\CActiveRecord.php(1292): CActiveFinder->query(Object(CDbCriteria), true)
+#6 E:\lamp\Farseer\html\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#7 E:\lamp\Farseer\html\mbfix\protected\controllers\FinanceController.php(217): CActiveRecord->findAll(Object(CDbCriteria))
+#8 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): FinanceController->actionTurnoverIncomeList()
+#9 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('turnoverIncomeL...')
+#13 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('finance/turnove...')
+#14 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#16 {main}
+REQUEST_URI=/mbfix/index.php?r=finance/turnoverIncomeList&_dc=1327022022463&page=1&start=0&limit=25
+HTTP_REFERER=http://localhost:8080/mbfix/main.html
+---
+2012/01/20 10:08:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327025332156
+HTTP_REFERER=http://localhost:8080/mbfix/main-test.html
+---
+2012/01/20 10:20:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327026056233
+HTTP_REFERER=http://localhost:8080/mbfix/main.html
+---
+2012/01/20 10:21:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message '请登录' in E:\lamp\Farseer\html\mbfix\protected\controllers\UserController.php:143
+Stack trace:
+#0 E:\lamp\Farseer\html\framework\web\actions\CInlineAction.php(50): UserController->actionCurrentUser()
+#1 E:\lamp\Farseer\html\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 E:\lamp\Farseer\html\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#3 E:\lamp\Farseer\html\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 E:\lamp\Farseer\html\framework\web\CWebApplication.php(276): CController->run('currentUser')
+#5 E:\lamp\Farseer\html\framework\web\CWebApplication.php(135): CWebApplication->runController('user/currentUse...')
+#6 E:\lamp\Farseer\html\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 E:\lamp\Farseer\html\mbfix\index.php(46): CApplication->run()
+#8 {main}
+REQUEST_URI=/mbfix/index.php?r=user/currentUser&_dc=1327026060809
+HTTP_REFERER=http://localhost:8080/mbfix/main.html
+---

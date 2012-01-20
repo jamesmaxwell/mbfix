@@ -720,7 +720,7 @@ Ext.define('Mbfix.controller.Home', {
 					url : 'index.php?r=user/logout',
 					success : function(response) {
 						// ֱ直接刷新页面
-						window.location.reload(true);
+						window.location.href = 'index.html';
 					}
 				});
 	}
