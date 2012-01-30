@@ -73,7 +73,7 @@
 		}, {
 			xtype : 'container',
 			layout : 'hbox',
-			frame : true,
+			/*frame : true,*/
 			items : [ {
 				xtype : 'component',
 				flex : 1
@@ -105,7 +105,7 @@
 		}, {
 			xtype : 'container',
 			layout : 'hbox',
-			frame : true,
+			/*frame : true,*/
 			items : [ {
 				xtype : 'component',
 				flex : 1
