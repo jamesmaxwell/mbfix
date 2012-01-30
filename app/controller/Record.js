@@ -4,11 +4,13 @@
 Ext.define('Mbfix.controller.Record', {
 	extend : 'Ext.app.Controller',
 
-	views : ['Record', 'RecordList', 'Repair', 'FinishRecord', 'component.ApplyList'],
-	stores : ['CustomTypes', 'ServiceRecords', 'ServicePoints', 'RecordStates', 'ComponentApplys'],
+	views : ['Record', 'RecordList', 'Repair', 'FinishRecord',
+			'component.ApplyList'],
+	stores : ['CustomTypes', 'ServiceRecords', 'ServicePoints', 'RecordStates',
+			'ComponentApplys'],
 
 	init : function() {
-		this.control({					
+		this.control({
 					'record button[action=comfirm]' : {
 						click : this.recordConfirm
 					},
@@ -21,7 +23,7 @@ Ext.define('Mbfix.controller.Record', {
 					'recordlist grid' : {
 						selectionchange : this.recordListSelected,
 						itemdblclick : this.recordDoubleClick
-					},					
+					},
 					'finishrecord #fetch_type' : {
 						select : this.fetchTypeChange
 					},
@@ -37,15 +39,16 @@ Ext.define('Mbfix.controller.Record', {
 	recordConfirm : function(button) {
 		var controller = this;
 		var form = button.up('window').down('form').getForm();
-		var mobile =  button.up('window').down('#custom_mobile');
+		var mobile = button.up('window').down('#custom_mobile');
 		var phone = button.up('window').down('#custom_phone');
-		if(Ext.isEmpty(mobile.getValue()) && Ext.isEmpty(phone.getValue())){
+		if (Ext.isEmpty(mobile.getValue()) && Ext.isEmpty(phone.getValue())) {
 			mobile.markInvalid('手机和固定电话两个必须填一个!');
 			return;
 		}
 		var serialNumber = button.up('window').down('#serialNumber');
 		var snid = button.up('window').down('#machine_snid');
-		if(Ext.isEmpty(serialNumber.getValue()) && Ext.isEmpty(snid.getValue())){
+		if (Ext.isEmpty(serialNumber.getValue())
+				&& Ext.isEmpty(snid.getValue())) {
 			serialNumber.markInvalid('序列号和SNID两个必须填一个!');
 			return;
 		}
@@ -79,7 +82,44 @@ Ext.define('Mbfix.controller.Record', {
 	 */
 	serialCheck : function(button) {
 		var serialNo = button.up('form').down('#serialNumber').getValue();
-		alert(serialNo);
+		if (Ext.isEmpty(serialNo)) {
+			Ext.Msg.alert('提示', '请输入序列号!');
+			return false;
+		}
+		Ext.Ajax.request({
+					url : Mbfix.Util.getUrl('serviceRecord', 'serialCheck'),
+					method : 'POST',
+					scope : this,
+					params : {
+						serialNo : serialNo
+					},
+					success : function(response) {
+						var result = Ext.JSON.decode(response.responseText);
+						if (result.success) {
+							var items = [], item;
+							if (result.results.length == 0) {
+								button.up('form').down('#serialCheck_result')
+										.setValue('无记录');
+							} else {
+								for (var i = 0; i < result.results.length; i++) {
+									item = result.results[i];
+									items.push(Ext.Date.format(Ext.Date.parse(
+													item.create_time, 'U'),
+											'Y-m-d'));
+									items.push(item.service_point);
+									items.push(item.record_no);
+								}
+								button.up('form').down('#serialCheck_result')
+										.setValue(items.join(','));
+							}
+						} else {
+							Ext.Msg.alert('检查失败', result.errors.message);
+						}
+					},
+					failure : function(response) {
+						Ext.Msg.alert('检查失败', response.responseText);
+					}
+				});
 	},
 
 	/**
@@ -236,7 +276,7 @@ Ext.define('Mbfix.controller.Record', {
 						Ext.Msg.alert('错误', action.result.errors.message);
 					}
 				});
-	},
-
+	}
+	,
 
 });

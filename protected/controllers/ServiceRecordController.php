@@ -45,20 +45,25 @@ class ServiceRecordController extends Controller
 		}else{
 			$limit = $_POST['limit'];
 			$criteria = new CDbCriteria;
-			$criteria->join = 'join hx_user_service_point b on t.service_point_id = b.service_point_id';
+			//$criteria->join = 'join hx_user_service_point b on t.service_point_id = b.service_point_id';
 			$criteria->with = array(
 				'user'=>array('select'=>'name'),
 				'servicePoint'=>array('select'=>'name'),
 				'serviceType','warrantyType','customType',
 				'machineBrand','machineType');
-			$criteria->condition = 't.user_id = :userId';
-			$criteria->params = array(':userId' => $user->getState('userId'));
+			//$criteria->condition = 't.user_id = :userId';
+			//$criteria->params = array(':userId' => $user->getState('userId'));
 			//begin 处理查询参数
 			$recordNo = $_POST['recordNo'];
 			$fixer = $_POST['fixer'];
 			$beginDate = $_POST['beginDate'];
 			$endDate = $_POST['endDate'];
 			$recordState = $_POST['recordState'];
+			$serialNo = $_POST['serialNo'];
+			$snid = $_POST['snid'];
+			$warrantyType = $_POST['warrantyType'];
+			$customName = $_POST['customName'];
+			$customPhone = $_POST['customPhone'];
 			//如果设置了工单号就不处理其它查询参数了
 			if(!empty($recordNo)){
 				$criteria->addCondition('t.record_no = \'' . $recordNo . '\'');
@@ -79,13 +84,35 @@ class ServiceRecordController extends Controller
 						$criteria->addCondition('t.create_time <= '. $eDate);
 					}
 				}
-				if(!empty($recordState)){
-					$criteria->addCondition('t.record_state = ' . $recordState);
+				if(!empty($serialNo)){
+					$criteria->addCondition('t.serial_number = \'' . $serialNo . '\'');
+				}
+				if(!empty($snid)){
+					$criteria->addCondition('t.machine_snid = \'' . $snid . '\'');
+				}
+				if(!empty($customName)){
+					$criteria->addCondition('t.custom_name = \'' . $customName . '\'');	//may be like %% search
+				}
+				if(!empty($warrantyType)){
+					$criteria->addCondition('t.warranty_type = ' . $warrantyType);
+				}
+				//TODO: 同时处理手机或固话
+				if(!empty($customPhone)){
+					$criteria->addCondition('t.custom_mobile = \'' . $customPhone . '\'');
+				}
+				if(!empty($recordState) && $recordState != '0'){
+					//50设定为‘返修’类型的机器
+					//TODO: 目前 warranty_type 是一个与表 hx_warranty_type 外键关联的键，如何确定是‘返修’
+					if($recordState == '50'){
+						$criteria->addCondition('t.warranty_type = 2');
+					}else{
+						$criteria->addCondition('t.record_state = ' . $recordState);
+					}
 				}
 			}
-				
+
 			//end 处理查询参数
-				
+
 			$criteria->order = 't.create_time desc';
 			//先取得总记录数
 			$total = ServiceRecord::model()->count($criteria);
@@ -96,7 +123,7 @@ class ServiceRecordController extends Controller
 			echo JsonHelper::encode(true, '', $list, array('id', 'user_id', 'record_no','create_time',
 				'custom_name','custom_sex','custom_mobile','custom_phone','custom_company','custom_address',
 				'custom_postcode','custom_email','machine_model','machine_snid','disk_state','machine_look',
-				'machine_attachment','error_desc','other_note',
+				'machine_attachment','error_desc','other_note','serial_number',
 			array('col'=>'user.name','name'=>'name'),
 			array('col'=>'record_state','name'=>'record_state'),
 			array('col'=>'servicePoint.name','name'=>'service_point'),
@@ -130,7 +157,7 @@ class ServiceRecordController extends Controller
 			$model->save();
 			//保存成功后,再登录服务单记录的状态为'已结案'
 			ServiceRecord::model()->updateByPk($model->record_id, array('record_state'=>ServiceRecord::FINISHED));
-			
+				
 			$recordModel = ServiceRecord::model()->find('id=:id',array(':id'=>$model->record_id));
 			//维修结案，增加营业性收入
 			$incomeModel = new TurnoverIncome();
@@ -141,16 +168,40 @@ class ServiceRecordController extends Controller
 			$incomeModel->money = $model->pay_money;
 			$incomeModel->notes = '服务单结案自动生成。 工单号' . $recordModel->record_no;
 			$incomeModel->save();
-				
+
 			$trans->commit();
 		}catch(Exception $e){
 			Yii::log($e->getMessage());
 			$trans->rollBack();
-				
+
 			echo JsonHelper::encode(false, $e->getMessage());
 			Yii::app()->end();
 		}
 
 		echo JsonHelper::encode(true);
+	}
+
+	/**
+	 *
+	 * 根据序列号查询整个库中是否存在之前修过的记录
+	 */
+	public function actionSerialCheck(){
+		//TODO: 优化当返回记录多时，显示不下的问题
+		$serialNo = $_REQUEST['serialNo'];
+		if(empty($serialNo)){
+			echo JsonHelper::encode(false, '请输入序列号');
+			Yii::app()->end();
+		}else{
+			$list = ServiceRecord::model()->findAll(array(
+				'select' => 'create_time,record_no',
+				'with' => array('servicePoint'=>array('select'=>'name')),
+				'condition' => 'serial_number = :serial_number',
+				'params' => array(':serial_number'=>$serialNo)
+			));
+				
+			echo JsonHelper::encode(true, '', $list, array('record_no','create_time',
+			array('name'=>'service_point','col'=>'servicePoint.name')
+			));
+		}
 	}
 }

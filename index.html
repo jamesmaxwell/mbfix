@@ -110,7 +110,7 @@
 					if(data.success){						
 						location.href = data.page;
 					}else{
-						alert(data.errors);
+						alert(data.errors.message);
 					}
 				},'json')
 				.error(function(data, textStatus, jqXHR){

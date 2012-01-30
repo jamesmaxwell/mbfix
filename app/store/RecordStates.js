@@ -8,7 +8,7 @@ Ext.define('Mbfix.store.RecordStates', {
 		'name' : 'state',
 		'type' : 'integer'
 	} ],
-	data : [ { name:'处理中', state:1 }, { name:'转修中', state: 2 }, { name:'报价中', state:3 }, {name: '客户不修',state: 4 },
+	data : [ { name:'全部', state:0 }, { name:'处理中', state:1 }, { name:'转修中', state: 2 }, { name:'报价中', state:3 }, {name: '客户不修',state: 4 },
 			{ name:'待料', state:5 }, { name:'到料处理中', state:6 }, {name: '无法修复', state:7 }, { name:'已修复',state: 8 },
-			{ name:'已结案', state:9 } ]
+			{ name:'已结案', state:9 },{ name:'返修', state:50 } ]
 });

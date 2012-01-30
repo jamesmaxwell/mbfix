@@ -180,13 +180,12 @@
 												width : 200
 											}, {
 												xtype : 'button',
-												text : '检测',
+												text : '检查',
 												action : 'serialCheck',
 												margin : '0 0 0 5'
 											}, {
 												xtype : 'displayfield',
 												itemId : 'serialCheck_result',
-												value : '--',
 												margin : '0 0 0 5',
 												flex : 1
 											}]

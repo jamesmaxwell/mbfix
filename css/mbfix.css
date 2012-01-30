@@ -11,4 +11,8 @@
 .type_delete{background-image:url('../images/icons/delete.gif');}
 div.recordDetail{padding:3px;font-size:13px;}
 div.recordDetail div{margin:2px 0;}
-div.recordDetail span{font-weight:bold;padding-left:3px;)
+div.recordDetail span{font-weight:bold;padding-left:3px;}
+/*rewrite the extjs fontsize*/
+.x-btn .x-btn-center .x-btn-inner{font-size:13px;}
+.x-form-item-label{font-size:12px;}
+.x-item-disabled{filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);opacity: 0.7;}

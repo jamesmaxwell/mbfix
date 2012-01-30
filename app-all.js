@@ -79866,13 +79866,12 @@ Ext.define('Mbfix.view.Record', {
 												width : 200
 											}, {
 												xtype : 'button',
-												text : '检测',
+												text : '检查',
 												action : 'serialCheck',
 												margin : '0 0 0 5'
 											}, {
 												xtype : 'displayfield',
 												itemId : 'serialCheck_result',
-												value : '--',
 												margin : '0 0 0 5',
 												flex : 1
 											}]
@@ -80241,172 +80240,234 @@ Ext.define('Mbfix.view.RecordList', {
 			xtype : 'container',
 			layout : 'anchor',
 			items : [{
-						xtype : 'fieldset',
-						title : '搜索',
-						layout : 'hbox',
-						margin : 4,
-						defaults : {
-							labelWidth : 60,
-							labelAlign : 'right'
-						},
-						items : [{
-									xtype : 'textfield',
-									fieldLabel : '工单号',
-									labelWidth : 50,
-									name : 'search_recordNo',
-									itemId : 'search_recordNo',
-									id : 'search_recordNo',
-									width : 190
-								},{
-									xtype : 'textfield',
-									fieldLabel : '接修员',
-									name : 'search_fixer',
-									labelWidth : 50,
-									itemId : 'search_fixer',
-									id : 'search_fixer',
-									width : 130
-								},{
-									xtype : 'datefield',
-									fieldLabel : '起始日期',
-									itemId : 'search_beginDate',
-									id : 'search_beginDate',
-									format : 'Y-m-d',
-									width : 160
-								},{
-									xtype : 'datefield',
-									fieldLabel : '结束日期',
-									itemId : 'search_endDate',
-									id : 'search_endDate',
-									format : 'Y-m-d',
-									width : 160
-								},{
-									xtype : 'combo',
-									id : 'search_state',
-									itemId : 'search_state',
-									fieldLabel : '状态',
-									labelWidth : 40,
-									queryMode : 'local',
-									store : 'RecordStates',
-									valueField : 'state',
-									displayField : 'name',
-									width : 110
-								},{
-									xtype : 'button',
-									text : '查询',
-									flex : 1,
-									margin : '0 0 0 5',
-									itemId : 'search_button'
-								}]
-					}, {
-						xtype : 'grid',
-						id : 'recordListGrid',
-						store : 'ServiceRecords',
-						border : 0,
-						flex : 1,
-						height : 350,
-						autoScroll : true,
-						columns : [{
-									xtype : 'datecolumn',
-									header : '创建时间',
-									dataIndex : 'create_time',
-									format : 'Y-m-d H:i',
-									width : 120
-								}, {
-									header : '工单号',
-									dataIndex : 'record_no',
-									sortable : false,
-									width : 170
-								}, {
-									header : '接修员',
-									dataIndex : 'name',
-									width : 70
-								}, {
-									header : '服务点',
-									dataIndex : 'service_point',
-									width : 60
-								}, {
-									header : '服务类型',
-									dataIndex : 'service_type',
-									sortable : false,
-									width : 75
-								}, {
-									header : '机器信息',
-									dataIndex : 'machine_brand',
-									sortable : false,
-									renderer : this.renderMachineInfo,
-									width : 110
-								}, {
-									header : '质保类型',
-									dataIndex : 'warranty_type',
-									sortable : false,
-									width : 65
-								}, {
-									header : '硬盘资料',
-									dataIndex : 'disk_state',
-									sortable : false,
-									renderer : this.renderDiskState,
-									width : 90
-								}, {
-									header : '状态',
-									dataIndex : 'record_state',
-									renderer : this.renderRecordState,
-									flex : 1
-								}],
-						bbar : [{
-									xtype : 'pagingtoolbar',
-									id : 'recordListPaging',
-									store : 'ServiceRecords',
-									displayInfo : true,
-									flex : 1
-								}]
-					}, {
-						xtype : 'panel',
-						id : 'detailRecordPanel',
-						flex : 1,
-						height : 105,
-						margin : '4',
-						tpl : [
-								'<div class="recordDetail">',
-								'<div><span>客户名称</span>: {custom_name}, <span>类型</span>: {custom_type}, <span>性别</span>: ',
-								'<tpl if="custom_sex == 1">',
-								'男',
-								'</tpl>',
-								'<tpl if="custom_sex == 0">',
-								'女',
-								'</tpl>',
-								', <span>客户手机</span>: {custom_mobile}',
-								'<tpl if="custom_phone">',
-								', <span>客户固话</span>: {custom_phone}',
-								'</tpl>',
-								'</div>',
-								'<div>',
-								'<tpl if="custom_company">',
-								'<span>客户单位</span>: {custom_company}',
-								'</tpl>',
-								'<tpl if="custom_address">',
-								', <span>联系地址</span>: {custom_address}',
-								'</tpl>',
-								'<tpl if="custom_postcode">',
-								', <span>邮编</span>: {custom_postcode}',
-								'</tpl>',
-								'<tpl if="custom_email">',
-								', <span>EMail</span>: {custom_email}',
-								'</tpl>',
-								'</div>',
-								'<div>',
-								'<span>机器型号</span>: {machine_model}, <span>序列号</span>: {serial_number}',
-								'<tpl if="machine_snid">',
-								', <span>snid</span>: {machine_snid}',
-								'</tpl>',
-								'</div>',
-								'<tpl if="machine_look">',
-								'<div><span>机器外观</span>: {machine_look}, <span>随机附件</span>: {machine_attachment}</div>',
-								'</tpl>',
-								'<tpl if="error_desc">',
-								'<div><span>故障描述</span>: {error_desc}, <span>其它备注</span>: {other_note}</div>',
-								'</tpl>', 
-								'</div>']
-					}]
+				xtype : 'fieldset',
+				title : '搜索',
+				layout : 'hbox',
+				margin : 4,
+				items : [{
+							xtype : 'container',
+							layout : 'anchor',
+							width : 760,
+							items : [{
+										xtype : 'container',
+										layout : 'hbox',
+										defaults : {
+											labelWidth : 60,
+											labelAlign : 'right'
+										},
+										flex : 1,
+										items : [{
+													xtype : 'textfield',
+													fieldLabel : '工单号',
+													labelWidth : 50,
+													name : 'search_recordNo',
+													itemId : 'search_recordNo',
+													id : 'search_recordNo',
+													width : 190
+												}, {
+													xtype : 'textfield',
+													fieldLabel : '接修员',
+													name : 'search_fixer',
+													labelWidth : 50,
+													itemId : 'search_fixer',
+													id : 'search_fixer',
+													width : 130
+												}, {
+													xtype : 'datefield',
+													fieldLabel : '起始日期',
+													itemId : 'search_beginDate',
+													id : 'search_beginDate',
+													format : 'Y-m-d',
+													width : 160
+												}, {
+													xtype : 'datefield',
+													fieldLabel : '结束日期',
+													itemId : 'search_endDate',
+													id : 'search_endDate',
+													format : 'Y-m-d',
+													width : 160
+												}, {
+													xtype : 'combo',
+													id : 'search_state',
+													itemId : 'search_state',
+													fieldLabel : '状态',
+													labelWidth : 40,
+													queryMode : 'local',
+													store : 'RecordStates',
+													valueField : 'state',
+													displayField : 'name',
+													width : 110
+												}]
+									}, {
+										xtype : 'container',
+										layout : 'hbox',
+										defaults : {
+											labelWidth : 60,
+											labelAlign : 'right'
+										},
+										flex : 1,
+										items : [{
+													xtype : 'textfield',
+													fieldLabel : '序列号',
+													labelWidth : 50,
+													name : 'search_serialNo',
+													itemId : 'search_serialNo',
+													id : 'search_serialNo',
+													width : 190
+												}, {
+													xtype : 'textfield',
+													fieldLabel : 'SNID',
+													labelWidth : 50,
+													name : 'search_snid',
+													itemId : 'search_snid',
+													id : 'search_snid',
+													width : 130
+												}, {
+													xtype : 'combo',
+													fieldLabel : '质保类型',
+													store : 'WarrantyTypes',
+													editable : false,
+													valueField : 'id',
+													displayField : 'text',
+													name : 'search_warrantyType',
+													itemId : 'search_warrantyType',
+													id : 'search_warrantyType',
+													width : 130
+												}, {
+													xtype : 'textfield',
+													fieldLabel : '客户姓名',
+													labelWidth : 60,
+													name : 'search_customName',
+													itemId : 'search_customName',
+													id : 'search_customName',
+													width : 150
+												}, {
+													xtype : 'textfield',
+													fieldLabel : '客户电话',
+													labelWidth : 60,
+													name : 'search_customPhone',
+													itemId : 'search_customPhone',
+													id : 'search_customPhone',
+													width : 150
+												}]
+									}]
+						}, {
+							xtype : 'button',
+							text : '查询',
+							flex : 1,
+							scale : 'large',
+							margin : 2,
+							itemId : 'search_button'
+						}]
+			}, {
+				xtype : 'grid',
+				id : 'recordListGrid',
+				store : 'ServiceRecords',
+				border : 0,
+				flex : 1,
+				height : 350,
+				autoScroll : true,
+				columns : [{
+							xtype : 'datecolumn',
+							header : '创建时间',
+							dataIndex : 'create_time',
+							format : 'Y-m-d H:i',
+							width : 120
+						}, {
+							header : '工单号',
+							dataIndex : 'record_no',
+							sortable : false,
+							width : 170
+						}, {
+							header : '接修员',
+							dataIndex : 'name',
+							width : 70
+						}, {
+							header : '服务点',
+							dataIndex : 'service_point',
+							width : 60
+						}, {
+							header : '服务类型',
+							dataIndex : 'service_type',
+							sortable : false,
+							width : 75
+						}, {
+							header : '机器信息',
+							dataIndex : 'machine_brand',
+							sortable : false,
+							renderer : this.renderMachineInfo,
+							width : 110
+						}, {
+							header : '质保类型',
+							dataIndex : 'warranty_type',
+							sortable : false,
+							width : 65
+						}, {
+							header : '硬盘资料',
+							dataIndex : 'disk_state',
+							sortable : false,
+							renderer : this.renderDiskState,
+							width : 90
+						}, {
+							header : '状态',
+							dataIndex : 'record_state',
+							renderer : this.renderRecordState,
+							flex : 1
+						}],
+				bbar : [{
+							xtype : 'pagingtoolbar',
+							id : 'recordListPaging',
+							store : 'ServiceRecords',
+							displayInfo : true,
+							flex : 1
+						}]
+			}, {
+				xtype : 'panel',
+				id : 'detailRecordPanel',
+				flex : 1,
+				height : 105,
+				margin : '4',
+				tpl : [
+						'<div class="recordDetail">',
+						'<div><span>客户名称</span>: {custom_name}, <span>类型</span>: {custom_type}, <span>性别</span>: ',
+						'<tpl if="custom_sex == 1">',
+						'男',
+						'</tpl>',
+						'<tpl if="custom_sex == 0">',
+						'女',
+						'</tpl>',
+						', <span>客户手机</span>: {custom_mobile}',
+						'<tpl if="custom_phone">',
+						', <span>客户固话</span>: {custom_phone}',
+						'</tpl>',
+						'</div>',
+						'<div>',
+						'<tpl if="custom_company">',
+						'<span>客户单位</span>: {custom_company}',
+						'</tpl>',
+						'<tpl if="custom_address">',
+						', <span>联系地址</span>: {custom_address}',
+						'</tpl>',
+						'<tpl if="custom_postcode">',
+						', <span>邮编</span>: {custom_postcode}',
+						'</tpl>',
+						'<tpl if="custom_email">',
+						', <span>EMail</span>: {custom_email}',
+						'</tpl>',
+						'</div>',
+						'<div>',
+						'<span>机器型号</span>: {machine_model}, <span>序列号</span>: {serial_number}',
+						'<tpl if="machine_snid">',
+						', <span>snid</span>: {machine_snid}',
+						'</tpl>',
+						'</div>',
+						'<tpl if="machine_look">',
+						'<div><span>机器外观</span>: {machine_look}, <span>随机附件</span>: {machine_attachment}</div>',
+						'</tpl>',
+						'<tpl if="error_desc">',
+						'<div><span>故障描述</span>: {error_desc}, <span>其它备注</span>: {other_note}</div>',
+						'</tpl>', '</div>']
+			}]
 		}
 
 		];
@@ -80424,11 +80485,11 @@ Ext.define('Mbfix.view.RecordList', {
 	 * 服务单状态自定义显示 1=处理中,2=转修中,3=报价中,4=客户不修,5-待料,6=到料处理中,7=无法修复,8=已修复,9=已结案
 	 */
 	renderRecordState : function(value, p, record) {
-		var stateStore = Ext.getStore('RecordStates');	
-		var index = stateStore.find('state',value);
-		if(index != -1){
+		var stateStore = Ext.getStore('RecordStates');
+		var index = stateStore.find('state', value);
+		if (index != -1) {
 			return stateStore.getAt(index).data.name;
-		}else{		
+		} else {
 			return '未知';
 		}
 	},
@@ -81251,9 +81312,9 @@ Ext.define('Mbfix.store.RecordStates', {
 		'name' : 'state',
 		'type' : 'integer'
 	} ],
-	data : [ { name:'处理中', state:1 }, { name:'转修中', state: 2 }, { name:'报价中', state:3 }, {name: '客户不修',state: 4 },
+	data : [ { name:'全部', state:0 }, { name:'处理中', state:1 }, { name:'转修中', state: 2 }, { name:'报价中', state:3 }, {name: '客户不修',state: 4 },
 			{ name:'待料', state:5 }, { name:'到料处理中', state:6 }, {name: '无法修复', state:7 }, { name:'已修复',state: 8 },
-			{ name:'已结案', state:9 } ]
+			{ name:'已结案', state:9 },{ name:'返修', state:50 } ]
 });
 Ext.define('Mbfix.view.Login', {
 	extend : 'Ext.window.Window',
@@ -84086,7 +84147,12 @@ Ext.define('Mbfix.store.ServiceRecords', {
 			fixer : null,
 			beginDate : null,
 			endDate : null,
-			recordState : null
+			recordState : null,
+			serialNo : null,
+			snid : null,
+			warrantyType : null,
+			customName : null,
+			customPhone : null
 		},
 		api : {
 			read : 'index.php?r=serviceRecord/list',
@@ -84178,11 +84244,13 @@ Ext.define('Mbfix.store.ServicePoints', {
 Ext.define('Mbfix.controller.Record', {
 	extend : 'Ext.app.Controller',
 
-	views : ['Record', 'RecordList', 'Repair', 'FinishRecord', 'component.ApplyList'],
-	stores : ['CustomTypes', 'ServiceRecords', 'ServicePoints', 'RecordStates', 'ComponentApplys'],
+	views : ['Record', 'RecordList', 'Repair', 'FinishRecord',
+			'component.ApplyList'],
+	stores : ['CustomTypes', 'ServiceRecords', 'ServicePoints', 'RecordStates',
+			'ComponentApplys'],
 
 	init : function() {
-		this.control({					
+		this.control({
 					'record button[action=comfirm]' : {
 						click : this.recordConfirm
 					},
@@ -84195,7 +84263,7 @@ Ext.define('Mbfix.controller.Record', {
 					'recordlist grid' : {
 						selectionchange : this.recordListSelected,
 						itemdblclick : this.recordDoubleClick
-					},					
+					},
 					'finishrecord #fetch_type' : {
 						select : this.fetchTypeChange
 					},
@@ -84211,15 +84279,16 @@ Ext.define('Mbfix.controller.Record', {
 	recordConfirm : function(button) {
 		var controller = this;
 		var form = button.up('window').down('form').getForm();
-		var mobile =  button.up('window').down('#custom_mobile');
+		var mobile = button.up('window').down('#custom_mobile');
 		var phone = button.up('window').down('#custom_phone');
-		if(Ext.isEmpty(mobile.getValue()) && Ext.isEmpty(phone.getValue())){
+		if (Ext.isEmpty(mobile.getValue()) && Ext.isEmpty(phone.getValue())) {
 			mobile.markInvalid('手机和固定电话两个必须填一个!');
 			return;
 		}
 		var serialNumber = button.up('window').down('#serialNumber');
 		var snid = button.up('window').down('#machine_snid');
-		if(Ext.isEmpty(serialNumber.getValue()) && Ext.isEmpty(snid.getValue())){
+		if (Ext.isEmpty(serialNumber.getValue())
+				&& Ext.isEmpty(snid.getValue())) {
 			serialNumber.markInvalid('序列号和SNID两个必须填一个!');
 			return;
 		}
@@ -84253,7 +84322,44 @@ Ext.define('Mbfix.controller.Record', {
 	 */
 	serialCheck : function(button) {
 		var serialNo = button.up('form').down('#serialNumber').getValue();
-		alert(serialNo);
+		if (Ext.isEmpty(serialNo)) {
+			Ext.Msg.alert('提示', '请输入序列号!');
+			return false;
+		}
+		Ext.Ajax.request({
+					url : Mbfix.Util.getUrl('serviceRecord', 'serialCheck'),
+					method : 'POST',
+					scope : this,
+					params : {
+						serialNo : serialNo
+					},
+					success : function(response) {
+						var result = Ext.JSON.decode(response.responseText);
+						if (result.success) {
+							var items = [], item;
+							if (result.results.length == 0) {
+								button.up('form').down('#serialCheck_result')
+										.setValue('无记录');
+							} else {
+								for (var i = 0; i < result.results.length; i++) {
+									item = result.results[i];
+									items.push(Ext.Date.format(Ext.Date.parse(
+													item.create_time, 'U'),
+											'Y-m-d'));
+									items.push(item.service_point);
+									items.push(item.record_no);
+								}
+								button.up('form').down('#serialCheck_result')
+										.setValue(items.join(','));
+							}
+						} else {
+							Ext.Msg.alert('检查失败', result.errors.message);
+						}
+					},
+					failure : function(response) {
+						Ext.Msg.alert('检查失败', response.responseText);
+					}
+				});
 	},
 
 	/**
@@ -84410,8 +84516,8 @@ Ext.define('Mbfix.controller.Record', {
 						Ext.Msg.alert('错误', action.result.errors.message);
 					}
 				});
-	},
-
+	}
+	,
 
 });
 /**
@@ -84745,7 +84851,7 @@ Ext.define('Mbfix.controller.Home', {
 					controller.application.currentServicePoint = result.results[0].servicePoint;
 					var menus = result.menus, i, j, menuItem, key, item, toolbar = Ext
 							.getCmp('menuToolbar');
-					// 添加维修菜单
+					// 添加菜单
 					for (i = 0; i < menus.length; i++) {
 						menuItem = {
 							xtype : 'button',
@@ -85006,6 +85112,7 @@ Ext.define('Mbfix.controller.Home', {
 			this.win = Ext.widget('record');
 		}
 		var win = this.win;
+		win.down('form').getForm().reset();
 		var controller = this;
 		Ext.Ajax.request({
 			url : 'index.php?r=common/recordNo',
@@ -85084,7 +85191,11 @@ Ext.define('Mbfix.controller.Home', {
 		var fixer = Ext.getCmp('search_fixer').getValue(), beginDate = Ext
 				.getCmp('search_beginDate').getValue(), endDate = Ext
 				.getCmp('search_endDate').getValue(), recordState = Ext
-				.getCmp('search_state').getValue();
+				.getCmp('search_state').getValue(), serialNo = Ext.getCmp('search_serialNo').getValue(),
+				snid = Ext.getCmp('search_snid').getValue(),
+				warrantyType = Ext.getCmp('search_warrantyType').getValue(),
+				customName = Ext.getCmp('search_customName').getValue(),
+				customPhone = Ext.getCmp('search_customPhone').getValue();
 		if (!Ext.isEmpty(fixer)) {
 			proxy.extraParams.fixer = fixer;
 		}
@@ -85096,6 +85207,21 @@ Ext.define('Mbfix.controller.Home', {
 		}
 		if (!Ext.isEmpty(recordState)) {
 			proxy.extraParams.recordState = recordState;
+		}
+		if (!Ext.isEmpty(serialNo)) {
+			proxy.extraParams.serialNo = serialNo;
+		}
+		if (!Ext.isEmpty(snid)) {
+			proxy.extraParams.snid = snid;
+		}
+		if (!Ext.isEmpty(warrantyType)) {
+			proxy.extraParams.warrantyType = warrantyType;
+		}
+		if (!Ext.isEmpty(customName)) {
+			proxy.extraParams.customName = customName;
+		}
+		if (!Ext.isEmpty(customPhone)) {
+			proxy.extraParams.customPhone = customPhone;
 		}
 		this._loadRecordList(store);
 	},
@@ -85786,36 +85912,41 @@ Ext.define('Mbfix.controller.Finance', {
 
 
 /**
-* 通用帮助类
-*/
-Ext.define('Mbfix.Util',{
-	/**
-	* 默认的页面地址
-	*/
-	defaultPage : 'index.php',
-	
-	/**
-	* 根据控制器，动作和参数生成最终的URL地址
-	*/
-	getUrl : function(controller, action, parameter){
-		//TODO: 处理可能的参数
-		return Ext.String.format('{0}r={1}/{2}',defaultPage, controller, action);
-	}
-});
+ * 通用帮助类
+ */
+Ext.define('Mbfix.Util', {
+			statics : {
+				/**
+				 * 默认的页面地址
+				 */
+				defaultPage : 'index.php',
+
+				/**
+				 * 根据控制器，动作和参数生成最终的URL地址
+				 */
+				getUrl : function(controller, action, parameter) {
+					// TODO: 处理可能的参数
+					return Ext.String.format('{0}?r={1}/{2}', this.defaultPage,
+							controller, action);
+				}
+			}
+		});
 
 Ext.Loader.setConfig({
 			enabled : true
 		});
 
-
-Ext.require(['Ext.button.Button','Ext.Component','Ext.container.Container','Ext.grid.Panel',
-'Ext.window.Window','Ext.form.Panel','Ext.container.Viewport','Ext.toolbar.Toolbar','Ext.toolbar.Spacer',
-'Ext.form.FieldSet','Ext.form.field.ComboBox','Ext.form.field.Date','Ext.form.field.Display',
-'Ext.form.field.Hidden','Ext.form.Label','Ext.form.field.Number',
-'Ext.form.field.Radio','Ext.form.field.TextArea','Ext.form.field.Text',
-'Ext.form.field.Checkbox','Ext.toolbar.Paging','Ext.toolbar.Fill','Ext.toolbar.Item',
-'Ext.toolbar.Separator','Ext.toolbar.TextItem','Ext.view.View',
-'Ext.menu.Menu','Ext.menu.Item','Ext.menu.Separator','Ext.grid.plugin.Editing']);
+Ext.require(['Ext.button.Button', 'Ext.Component', 'Ext.container.Container',
+		'Ext.grid.Panel', 'Ext.window.Window', 'Ext.form.Panel',
+		'Ext.container.Viewport', 'Ext.toolbar.Toolbar', 'Ext.toolbar.Spacer',
+		'Ext.form.FieldSet', 'Ext.form.field.ComboBox', 'Ext.form.field.Date',
+		'Ext.form.field.Display', 'Ext.form.field.Hidden', 'Ext.form.Label',
+		'Ext.form.field.Number', 'Ext.form.field.Radio',
+		'Ext.form.field.TextArea', 'Ext.form.field.Text',
+		'Ext.form.field.Checkbox', 'Ext.toolbar.Paging', 'Ext.toolbar.Fill',
+		'Ext.toolbar.Item', 'Ext.toolbar.Separator', 'Ext.toolbar.TextItem',
+		'Ext.view.View', 'Ext.menu.Menu', 'Ext.menu.Item',
+		'Ext.menu.Separator', 'Ext.grid.plugin.Editing']);
 
 Ext.application({
 			name : 'Mbfix',
@@ -85845,5 +85976,6 @@ Ext.application({
 				currentRecordId : 0
 			},
 
-			controllers : ['Home', 'User', 'Record', 'TypeAdmin', 'Repair', 'Finance']
+			controllers : ['Home', 'User', 'Record', 'TypeAdmin', 'Repair',
+					'Finance']
 		});

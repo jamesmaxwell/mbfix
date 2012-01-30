@@ -128,7 +128,7 @@ Ext.define('Mbfix.controller.Home', {
 					controller.application.currentServicePoint = result.results[0].servicePoint;
 					var menus = result.menus, i, j, menuItem, key, item, toolbar = Ext
 							.getCmp('menuToolbar');
-					// 添加维修菜单
+					// 添加菜单
 					for (i = 0; i < menus.length; i++) {
 						menuItem = {
 							xtype : 'button',
@@ -389,6 +389,7 @@ Ext.define('Mbfix.controller.Home', {
 			this.win = Ext.widget('record');
 		}
 		var win = this.win;
+		win.down('form').getForm().reset();
 		var controller = this;
 		Ext.Ajax.request({
 			url : 'index.php?r=common/recordNo',
@@ -467,7 +468,11 @@ Ext.define('Mbfix.controller.Home', {
 		var fixer = Ext.getCmp('search_fixer').getValue(), beginDate = Ext
 				.getCmp('search_beginDate').getValue(), endDate = Ext
 				.getCmp('search_endDate').getValue(), recordState = Ext
-				.getCmp('search_state').getValue();
+				.getCmp('search_state').getValue(), serialNo = Ext.getCmp('search_serialNo').getValue(),
+				snid = Ext.getCmp('search_snid').getValue(),
+				warrantyType = Ext.getCmp('search_warrantyType').getValue(),
+				customName = Ext.getCmp('search_customName').getValue(),
+				customPhone = Ext.getCmp('search_customPhone').getValue();
 		if (!Ext.isEmpty(fixer)) {
 			proxy.extraParams.fixer = fixer;
 		}
@@ -479,6 +484,21 @@ Ext.define('Mbfix.controller.Home', {
 		}
 		if (!Ext.isEmpty(recordState)) {
 			proxy.extraParams.recordState = recordState;
+		}
+		if (!Ext.isEmpty(serialNo)) {
+			proxy.extraParams.serialNo = serialNo;
+		}
+		if (!Ext.isEmpty(snid)) {
+			proxy.extraParams.snid = snid;
+		}
+		if (!Ext.isEmpty(warrantyType)) {
+			proxy.extraParams.warrantyType = warrantyType;
+		}
+		if (!Ext.isEmpty(customName)) {
+			proxy.extraParams.customName = customName;
+		}
+		if (!Ext.isEmpty(customPhone)) {
+			proxy.extraParams.customPhone = customPhone;
 		}
 		this._loadRecordList(store);
 	},

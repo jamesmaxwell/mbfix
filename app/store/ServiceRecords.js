@@ -10,7 +10,12 @@ Ext.define('Mbfix.store.ServiceRecords', {
 			fixer : null,
 			beginDate : null,
 			endDate : null,
-			recordState : null
+			recordState : null,
+			serialNo : null,
+			snid : null,
+			warrantyType : null,
+			customName : null,
+			customPhone : null
 		},
 		api : {
 			read : 'index.php?r=serviceRecord/list',
