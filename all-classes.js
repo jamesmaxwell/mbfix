@@ -79634,7 +79634,7 @@ Ext.define('Mbfix.view.Home', {
 		}, {
 			xtype : 'container',
 			layout : 'hbox',
-			frame : true,
+			/*frame : true,*/
 			items : [ {
 				xtype : 'component',
 				flex : 1
@@ -79666,7 +79666,7 @@ Ext.define('Mbfix.view.Home', {
 		}, {
 			xtype : 'container',
 			layout : 'hbox',
-			frame : true,
+			/*frame : true,*/
 			items : [ {
 				xtype : 'component',
 				flex : 1
