@@ -73,7 +73,6 @@
 		}, {
 			xtype : 'container',
 			layout : 'hbox',
-			/*frame : true,*/
 			items : [ {
 				xtype : 'component',
 				flex : 1
@@ -84,19 +83,28 @@
 					xtype : 'grid',
 					title : '公告',
 					store : 'Notices',
-					padding : '10 0 10 200',
-					width : 500,
+					id : 'noticeGrid',
+					padding : '20 40 20 150',
+					width : 800,
 					columns : [ {
 						header : '标题',
 						dataIndex : 'title',
-						flex : 1
+						width : 150
 					}, {
 						header : '发布人',
-						dataIndex : 'author'
+						dataIndex : 'author',
+						width : 60
 					}, {
+						xtype : 'datecolumn',
 						header : '发布日期',
-						dataIndex : 'publish_date'
-					} ]
+						dataIndex : 'date',
+						format : 'Y-m-d',
+						width : 80
+					},{
+						header : '内容',
+						dataIndex : 'content',
+						flex : 1
+					}]
 				} ]
 			}, {
 				xtype : 'component',
@@ -105,7 +113,6 @@
 		}, {
 			xtype : 'container',
 			layout : 'hbox',
-			/*frame : true,*/
 			items : [ {
 				xtype : 'component',
 				flex : 1

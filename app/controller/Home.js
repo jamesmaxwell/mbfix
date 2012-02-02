@@ -147,7 +147,7 @@ Ext.define('Mbfix.controller.Home', {
 						}
 						toolbar.add(menuItem);
 					}
-					controller.getNoticesStore().load();
+					controller.getNoticesStore().loadPage(1);
 				} else {
 					Ext.widget('login').show();
 				}

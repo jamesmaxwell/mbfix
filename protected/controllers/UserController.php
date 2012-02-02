@@ -22,6 +22,7 @@ class UserController extends CController
 			$account = array('text'=>'财务','items'=>array());	//财务菜单
 			$dicAdmin = array('text'=>'系统管理','items'=>array());	//字典管理菜单
 			$userAdmin = array('text'=>'用户管理','items'=>array());	//用户管理菜单
+			$noticeAdmin = array('text'=>'信息管理','items'=>array());	//公告管理菜单
 			//只有维修员有接修的权限
 			if(self::hasRole($roles, User::ROLE_FIXER)){
 				array_push($repair['items'],array('itemId'=>'menuRecord','text'=>'接修登案'));
@@ -64,6 +65,9 @@ class UserController extends CController
 			*/
 				
 			if(self::hasRole($roles, User::ROLE_ADMIN)){
+				//添加公告管理项
+				array_push($noticeAdmin['items'], array('itemId'=>'menuNoticeAdmin','text'=>'公告管理'));
+				//添加用户管理项
 				array_push($userAdmin['items'], array('itemId'=>'menuUserAdmin','text'=>'用户管理'));
 				array_push($userAdmin['items'], array('itemId'=>'menuServicePointAdmin','text'=>'服务点管理'));
 				//添加字典管理项
@@ -100,6 +104,9 @@ class UserController extends CController
 			}
 			if(count($userAdmin['items']) > 0){
 				array_push($menus, $userAdmin);
+			}
+			if(count($noticeAdmin['items']) > 0){
+				array_push($menus, $noticeAdmin);
 			}
 
 		}

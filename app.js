@@ -64,5 +64,5 @@ Ext.application({
 			},
 
 			controllers : ['Home', 'User', 'Record', 'TypeAdmin', 'Repair',
-					'Finance']
+					'Finance', 'Notice']
 		});

@@ -6,7 +6,7 @@ Ext.define('Mbfix.view.user.UserAdmin', {
 	alias : 'widget.useradmin',
 	title : '用户管理',
 	width : 550,
-	height : 300,
+	height : 400,
 	modal : true,
 	layout : 'fit',
 

@@ -47,11 +47,15 @@
                 },
                 {
                     "path": "ext/src/util/",
-                    "name": "Offset.js"
+                    "name": "Memento.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ZIndexManager.js"
                 },
                 {
                     "path": "ext/src/util/",
-                    "name": "Memento.js"
+                    "name": "Animate.js"
                 },
                 {
                     "path": "ext/src/dd/",
@@ -59,7 +63,7 @@
                 },
                 {
                     "path": "ext/src/util/",
-                    "name": "Animate.js"
+                    "name": "Offset.js"
                 },
                 {
                     "path": "ext/src/",
@@ -68,10 +72,6 @@
                 {
                     "path": "ext/src/util/",
                     "name": "HashMap.js"
-                },
-                {
-                    "path": "ext/src/",
-                    "name": "ZIndexManager.js"
                 },
                 {
                     "path": "ext/src/",
@@ -110,16 +110,16 @@
                     "name": "Proxy.js"
                 },
                 {
-                    "path": "ext/src/fx/",
-                    "name": "CubicBezier.js"
-                },
-                {
                     "path": "ext/src/data/",
                     "name": "Connection.js"
                 },
                 {
                     "path": "ext/src/form/action/",
                     "name": "Action.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "CubicBezier.js"
                 },
                 {
                     "path": "ext/src/fx/",
@@ -150,16 +150,16 @@
                     "name": "Filter.js"
                 },
                 {
+                    "path": "ext/src/layout/container/",
+                    "name": "AbstractContainer.js"
+                },
+                {
                     "path": "ext/src/dd/",
                     "name": "StatusProxy.js"
                 },
                 {
                     "path": "ext/src/state/",
                     "name": "Provider.js"
-                },
-                {
-                    "path": "ext/src/layout/container/",
-                    "name": "AbstractContainer.js"
                 },
                 {
                     "path": "ext/src/fx/target/",
@@ -219,11 +219,11 @@
                 },
                 {
                     "path": "ext/src/form/action/",
-                    "name": "Submit.js"
+                    "name": "Load.js"
                 },
                 {
                     "path": "ext/src/form/action/",
-                    "name": "Load.js"
+                    "name": "Submit.js"
                 },
                 {
                     "path": "ext/src/layout/component/",
@@ -282,52 +282,12 @@
                     "name": "Errors.js"
                 },
                 {
-                    "path": "ext/src/fx/",
-                    "name": "Easing.js"
-                },
-                {
                     "path": "ext/src/layout/component/",
                     "name": "AbstractDock.js"
                 },
                 {
                     "path": "ext/src/layout/component/",
                     "name": "Dock.js"
-                },
-                {
-                    "path": "ext/src/layout/component/field/",
-                    "name": "Trigger.js"
-                },
-                {
-                    "path": "ext/src/fx/target/",
-                    "name": "Element.js"
-                },
-                {
-                    "path": "ext/src/fx/target/",
-                    "name": "CompositeElement.js"
-                },
-                {
-                    "path": "ext/src/fx/target/",
-                    "name": "Sprite.js"
-                },
-                {
-                    "path": "ext/src/fx/target/",
-                    "name": "CompositeSprite.js"
-                },
-                {
-                    "path": "ext/src/fx/target/",
-                    "name": "Component.js"
-                },
-                {
-                    "path": "ext/src/fx/",
-                    "name": "Manager.js"
-                },
-                {
-                    "path": "ext/src/fx/",
-                    "name": "Animator.js"
-                },
-                {
-                    "path": "ext/src/layout/container/boxOverflow/",
-                    "name": "Scroller.js"
                 },
                 {
                     "path": "ext/src/layout/container/",
@@ -342,8 +302,8 @@
                     "name": "AbstractFit.js"
                 },
                 {
-                    "path": "ext/src/layout/container/",
-                    "name": "Anchor.js"
+                    "path": "ext/src/fx/",
+                    "name": "Easing.js"
                 },
                 {
                     "path": "ext/src/state/",
@@ -450,36 +410,12 @@
                     "name": "Header.js"
                 },
                 {
-                    "path": "ext/src/button/",
-                    "name": "Split.js"
-                },
-                {
-                    "path": "ext/src/form/field/",
-                    "name": "Trigger.js"
-                },
-                {
-                    "path": "ext/src/form/field/",
-                    "name": "Picker.js"
-                },
-                {
-                    "path": "ext/src/form/field/",
-                    "name": "Spinner.js"
-                },
-                {
-                    "path": "ext/src/form/field/",
-                    "name": "Number.js"
-                },
-                {
                     "path": "ext/src/picker/",
                     "name": "Month.js"
                 },
                 {
-                    "path": "ext/src/picker/",
-                    "name": "Date.js"
-                },
-                {
-                    "path": "ext/src/form/field/",
-                    "name": "Date.js"
+                    "path": "ext/src/button/",
+                    "name": "Split.js"
                 },
                 {
                     "path": "ext/src/grid/header/",
@@ -498,12 +434,76 @@
                     "name": "LoadMask.js"
                 },
                 {
-                    "path": "ext/src/layout/container/boxOverflow/",
-                    "name": "Menu.js"
+                    "path": "ext/src/layout/component/field/",
+                    "name": "Trigger.js"
+                },
+                {
+                    "path": "ext/src/form/field/",
+                    "name": "Trigger.js"
+                },
+                {
+                    "path": "ext/src/form/field/",
+                    "name": "Picker.js"
+                },
+                {
+                    "path": "ext/src/form/field/",
+                    "name": "Spinner.js"
+                },
+                {
+                    "path": "ext/src/form/field/",
+                    "name": "Number.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Sprite.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "CompositeSprite.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Element.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "CompositeElement.js"
+                },
+                {
+                    "path": "ext/src/fx/target/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "ext/src/picker/",
+                    "name": "Date.js"
+                },
+                {
+                    "path": "ext/src/form/field/",
+                    "name": "Date.js"
+                },
+                {
+                    "path": "ext/src/fx/",
+                    "name": "Animator.js"
+                },
+                {
+                    "path": "ext/src/layout/container/",
+                    "name": "Anchor.js"
                 },
                 {
                     "path": "ext/src/dd/",
                     "name": "DragDropManager.js"
+                },
+                {
+                    "path": "ext/src/layout/container/boxOverflow/",
+                    "name": "Scroller.js"
+                },
+                {
+                    "path": "ext/src/layout/container/boxOverflow/",
+                    "name": "Menu.js"
                 },
                 {
                     "path": "ext/src/layout/container/",
@@ -532,14 +532,6 @@
                 {
                     "path": "ext/src/panel/",
                     "name": "AbstractPanel.js"
-                },
-                {
-                    "path": "ext/src/layout/component/",
-                    "name": "ProgressBar.js"
-                },
-                {
-                    "path": "ext/src/",
-                    "name": "ProgressBar.js"
                 },
                 {
                     "path": "ext/src/selection/",
@@ -576,6 +568,14 @@
                 {
                     "path": "ext/src/grid/",
                     "name": "View.js"
+                },
+                {
+                    "path": "ext/src/layout/component/",
+                    "name": "ProgressBar.js"
+                },
+                {
+                    "path": "ext/src/",
+                    "name": "ProgressBar.js"
                 },
                 {
                     "path": "ext/src/draw/",
@@ -887,19 +887,15 @@
                 },
                 {
                     "path": "app/view/",
-                    "name": "Home.js"
-                },
-                {
-                    "path": "app/view/",
                     "name": "Record.js"
                 },
                 {
                     "path": "app/view/",
-                    "name": "Repair.js"
+                    "name": "Home.js"
                 },
                 {
                     "path": "app/view/",
-                    "name": "RecordList.js"
+                    "name": "Repair.js"
                 },
                 {
                     "path": "app/view/",
@@ -908,6 +904,10 @@
                 {
                     "path": "app/view/",
                     "name": "ComponentSearch.js"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "RecordList.js"
                 },
                 {
                     "path": "app/view/",
@@ -974,10 +974,6 @@
                     "name": "RecordStates.js"
                 },
                 {
-                    "path": "app/view/",
-                    "name": "Login.js"
-                },
-                {
                     "path": "app/view/component/",
                     "name": "ComponentPurchase.js"
                 },
@@ -994,16 +990,12 @@
                     "name": "RoleAdmin.js"
                 },
                 {
+                    "path": "app/view/",
+                    "name": "Login.js"
+                },
+                {
                     "path": "app/view/component/",
                     "name": "PurchaseList.js"
-                },
-                {
-                    "path": "app/view/component/",
-                    "name": "ComponentStockout.js"
-                },
-                {
-                    "path": "app/store/component/",
-                    "name": "ComponentStockSellTypes.js"
                 },
                 {
                     "path": "app/store/component/",
@@ -1014,12 +1006,12 @@
                     "name": "ComponentSotckoutList.js"
                 },
                 {
-                    "path": "app/store/component/",
-                    "name": "ComponentReceiptTypes.js"
+                    "path": "app/view/component/",
+                    "name": "ComponentStockout.js"
                 },
                 {
-                    "path": "app/view/finance/",
-                    "name": "Payout.js"
+                    "path": "app/store/component/",
+                    "name": "ComponentStockSellTypes.js"
                 },
                 {
                     "path": "app/view/finance/",
@@ -1034,12 +1026,12 @@
                     "name": "FundApply.js"
                 },
                 {
-                    "path": "app/view/finance/",
-                    "name": "PayoutList.js"
+                    "path": "app/store/component/",
+                    "name": "ComponentReceiptTypes.js"
                 },
                 {
-                    "path": "app/store/finance/",
-                    "name": "FundApplyStates.js"
+                    "path": "app/view/finance/",
+                    "name": "Payout.js"
                 },
                 {
                     "path": "app/view/finance/",
@@ -1054,28 +1046,28 @@
                     "name": "TurnoverIncome.js"
                 },
                 {
+                    "path": "app/view/finance/",
+                    "name": "PayoutList.js"
+                },
+                {
                     "path": "app/store/finance/",
-                    "name": "FundPayTypes.js"
+                    "name": "FundApplyStates.js"
                 },
                 {
-                    "path": "app/model/",
-                    "name": "ComponentApply.js"
-                },
-                {
-                    "path": "app/model/",
-                    "name": "RepairComponent.js"
+                    "path": "app/view/notice/",
+                    "name": "NoticeAdmin.js"
                 },
                 {
                     "path": "app/store/finance/",
                     "name": "TicketTypes.js"
                 },
                 {
-                    "path": "app/model/",
-                    "name": "CustomContact.js"
+                    "path": "app/store/finance/",
+                    "name": "FundPayTypes.js"
                 },
                 {
                     "path": "app/model/",
-                    "name": "Role.js"
+                    "name": "RepairComponent.js"
                 },
                 {
                     "path": "app/model/",
@@ -1087,23 +1079,19 @@
                 },
                 {
                     "path": "app/model/",
-                    "name": "ServiceRecord.js"
-                },
-                {
-                    "path": "app/model/",
                     "name": "CommonType.js"
                 },
                 {
                     "path": "app/model/",
-                    "name": "ComponentPurchase.js"
+                    "name": "CustomContact.js"
                 },
                 {
                     "path": "app/model/",
-                    "name": "Payout.js"
+                    "name": "ComponentApply.js"
                 },
                 {
                     "path": "app/model/",
-                    "name": "TurnoverIncome.js"
+                    "name": "ServiceRecord.js"
                 },
                 {
                     "path": "app/model/",
@@ -1116,6 +1104,22 @@
                 {
                     "path": "app/model/",
                     "name": "Notice.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "ComponentPurchase.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Role.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "TurnoverIncome.js"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Payout.js"
                 },
                 {
                     "path": "app/view/",
@@ -1163,6 +1167,14 @@
                 },
                 {
                     "path": "app/store/",
+                    "name": "ContactTypes.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "RepairTypes.js"
+                },
+                {
+                    "path": "app/store/",
                     "name": "ProblemTypes.js"
                 },
                 {
@@ -1175,15 +1187,11 @@
                 },
                 {
                     "path": "app/store/",
-                    "name": "ContactTypes.js"
-                },
-                {
-                    "path": "app/store/",
-                    "name": "RepairTypes.js"
-                },
-                {
-                    "path": "app/store/",
                     "name": "ComponentBrands.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ComponentModels.js"
                 },
                 {
                     "path": "app/store/",
@@ -1198,16 +1206,8 @@
                     "name": "PayTypes.js"
                 },
                 {
-                    "path": "app/store/",
-                    "name": "ComponentModels.js"
-                },
-                {
                     "path": "app/controller/",
                     "name": "TypeAdmin.js"
-                },
-                {
-                    "path": "app/store/",
-                    "name": "ServiceRecords.js"
                 },
                 {
                     "path": "app/store/",
@@ -1216,6 +1216,10 @@
                 {
                     "path": "app/store/",
                     "name": "ServicePoints.js"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ServiceRecords.js"
                 },
                 {
                     "path": "app/controller/",
@@ -1236,6 +1240,10 @@
                 {
                     "path": "app/store/",
                     "name": "Notices.js"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "Notice.js"
                 },
                 {
                     "path": "app/store/component/",
